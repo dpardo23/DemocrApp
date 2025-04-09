@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.democraapp;
+package com.mycompany.democraapp.main;
 
 /**
  *
@@ -14,6 +14,3 @@ public class DemocraApp {
         System.out.println("Hello World!");
     }
 }
-//prueba Tomas
-//prueba Danely
-//prueba Rodrigo

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.mycompany.democraapp.view;
+package com.mycompany.democrapp.view;
 
 /**
  *
@@ -73,7 +73,7 @@ public class EdicionDeDatos extends javax.swing.JPanel {
         lblDescripcion2.setText("del partido politico.");
 
         lblIconEdit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIconEdit.setIcon(new javax.swing.ImageIcon("C:\\Users\\DIEGO\\OneDrive\\Documentos\\NetBeansProjects\\DemocraApp\\src\\main\\resources\\iconEdit.png")); // NOI18N
+        lblIconEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconEdit.png"))); // NOI18N
 
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setMaximumSize(new java.awt.Dimension(32767, 8));
@@ -138,7 +138,7 @@ public class EdicionDeDatos extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(scrollTablaID, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,18 +262,18 @@ public class EdicionDeDatos extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnGuardar)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblNombreLider)
-                                .addComponent(lblNombrePartido)
-                                .addComponent(txtNombrePartido, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                                .addComponent(lblSigla)
-                                .addComponent(txtSigla, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                                .addComponent(txtNombreLider, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                                .addComponent(lblIdeologia)
-                                .addComponent(txtIdeologia, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                                .addComponent(lblAfiliados)
-                                .addComponent(txtAfiliados, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                                .addComponent(lblCodigoIdentificador)
-                                .addComponent(txtCodigoIdentificador, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)))
+                                .addComponent(txtNombrePartido)
+                                .addComponent(txtSigla)
+                                .addComponent(txtNombreLider)
+                                .addComponent(lblIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtIdeologia)
+                                .addComponent(lblAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtAfiliados)
+                                .addComponent(lblCodigoIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCodigoIdentificador)
+                                .addComponent(lblNombrePartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblSigla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblNombreLider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(37, 37, 37))))
         );
         layout.setVerticalGroup(

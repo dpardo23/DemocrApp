@@ -27,8 +27,27 @@ public class EdicionDeDatos extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
+        lblDescripcion1 = new javax.swing.JLabel();
+        lblDescripcion2 = new javax.swing.JLabel();
+        lblIconEdit = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        scrollTablaID = new javax.swing.JScrollPane();
+        tableIdentificador = new javax.swing.JTable();
+        btnAtras = new javax.swing.JButton();
+        lblNombrePartido = new javax.swing.JLabel();
+        txtNombrePartido = new javax.swing.JTextField();
+        lblSigla = new javax.swing.JLabel();
+        txtSigla = new javax.swing.JTextField();
+        lblNombreLider = new javax.swing.JLabel();
+        txtNombreLider = new javax.swing.JTextField();
+        lblIdeologia = new javax.swing.JLabel();
+        txtIdeologia = new javax.swing.JTextField();
+        lblAfiliados = new javax.swing.JLabel();
+        txtAfiliados = new javax.swing.JTextField();
+        lblCodigoIdentificador = new javax.swing.JLabel();
+        txtCodigoIdentificador = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(57, 72, 98));
         setForeground(new java.awt.Color(255, 255, 255));
@@ -40,35 +59,192 @@ public class EdicionDeDatos extends javax.swing.JPanel {
         jPanel1.setMinimumSize(new java.awt.Dimension(350, 450));
         jPanel1.setPreferredSize(new java.awt.Dimension(350, 450));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("En esta seccion puedes actualizar la informacion");
+        lblTitulo.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo.setText("Edicion de Datos");
 
-        jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("del partido politico.");
+        lblDescripcion1.setBackground(new java.awt.Color(255, 255, 255));
+        lblDescripcion1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblDescripcion1.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescripcion1.setText("En esta seccion puedes actualizar la informacion");
+
+        lblDescripcion2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblDescripcion2.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescripcion2.setText("del partido politico.");
+
+        lblIconEdit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIconEdit.setIcon(new javax.swing.ImageIcon("C:\\Users\\DIEGO\\OneDrive\\Documentos\\NetBeansProjects\\DemocraApp\\src\\main\\resources\\iconEdit.png")); // NOI18N
+
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setMaximumSize(new java.awt.Dimension(32767, 8));
+
+        tableIdentificador.setBackground(new java.awt.Color(81, 198, 186));
+        tableIdentificador.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
+        tableIdentificador.setForeground(new java.awt.Color(255, 255, 255));
+        tableIdentificador.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Identificador", "Nombre"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableIdentificador.setGridColor(new java.awt.Color(255, 255, 255));
+        tableIdentificador.setMaximumSize(new java.awt.Dimension(300, 80));
+        tableIdentificador.setMinimumSize(new java.awt.Dimension(300, 80));
+        tableIdentificador.setPreferredSize(new java.awt.Dimension(300, 80));
+        tableIdentificador.setSelectionBackground(new java.awt.Color(57, 72, 98));
+        tableIdentificador.setSelectionForeground(new java.awt.Color(57, 72, 98));
+        scrollTablaID.setViewportView(tableIdentificador);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addContainerGap(35, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(lblTitulo))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblDescripcion2)
+                            .addComponent(lblDescripcion1)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(lblIconEdit))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(scrollTablaID, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(jLabel1)
+                .addGap(28, 28, 28)
+                .addComponent(lblTitulo)
+                .addGap(2, 2, 2)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addContainerGap(321, Short.MAX_VALUE))
+                .addComponent(lblDescripcion1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDescripcion2)
+                .addGap(35, 35, 35)
+                .addComponent(lblIconEdit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(scrollTablaID, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
+
+        btnAtras.setBackground(new java.awt.Color(81, 198, 186));
+        btnAtras.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnAtras.setForeground(new java.awt.Color(255, 255, 255));
+        btnAtras.setText("<");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+
+        lblNombrePartido.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblNombrePartido.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombrePartido.setText("Nombre del partido politico");
+
+        txtNombrePartido.setBackground(new java.awt.Color(57, 72, 98));
+        txtNombrePartido.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        txtNombrePartido.setForeground(new java.awt.Color(255, 255, 255));
+        txtNombrePartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombrePartidoActionPerformed(evt);
+            }
+        });
+
+        lblSigla.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblSigla.setForeground(new java.awt.Color(255, 255, 255));
+        lblSigla.setText("Sigla");
+
+        txtSigla.setBackground(new java.awt.Color(57, 72, 98));
+        txtSigla.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        txtSigla.setForeground(new java.awt.Color(255, 255, 255));
+
+        lblNombreLider.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblNombreLider.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreLider.setText("Nombre del lider");
+
+        txtNombreLider.setBackground(new java.awt.Color(57, 72, 98));
+        txtNombreLider.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        txtNombreLider.setForeground(new java.awt.Color(255, 255, 255));
+        txtNombreLider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreLiderActionPerformed(evt);
+            }
+        });
+
+        lblIdeologia.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblIdeologia.setForeground(new java.awt.Color(255, 255, 255));
+        lblIdeologia.setText("Ideologia");
+
+        txtIdeologia.setBackground(new java.awt.Color(57, 72, 98));
+        txtIdeologia.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        txtIdeologia.setForeground(new java.awt.Color(255, 255, 255));
+        txtIdeologia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdeologiaActionPerformed(evt);
+            }
+        });
+
+        lblAfiliados.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblAfiliados.setForeground(new java.awt.Color(255, 255, 255));
+        lblAfiliados.setText("Numero de afiliados");
+
+        txtAfiliados.setBackground(new java.awt.Color(57, 72, 98));
+        txtAfiliados.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        txtAfiliados.setForeground(new java.awt.Color(255, 255, 255));
+        txtAfiliados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAfiliadosActionPerformed(evt);
+            }
+        });
+
+        lblCodigoIdentificador.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblCodigoIdentificador.setForeground(new java.awt.Color(255, 255, 255));
+        lblCodigoIdentificador.setText("Codigo identificador");
+
+        txtCodigoIdentificador.setBackground(new java.awt.Color(57, 72, 98));
+        txtCodigoIdentificador.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        txtCodigoIdentificador.setForeground(new java.awt.Color(255, 255, 255));
+        txtCodigoIdentificador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoIdentificadorActionPerformed(evt);
+            }
+        });
+
+        btnGuardar.setBackground(new java.awt.Color(81, 198, 186));
+        btnGuardar.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardar.setText("Guardar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -76,20 +252,115 @@ public class EdicionDeDatos extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 350, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAtras)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnGuardar)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lblNombreLider)
+                                .addComponent(lblNombrePartido)
+                                .addComponent(txtNombrePartido, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                                .addComponent(lblSigla)
+                                .addComponent(txtSigla, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                                .addComponent(txtNombreLider, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                                .addComponent(lblIdeologia)
+                                .addComponent(txtIdeologia, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                                .addComponent(lblAfiliados)
+                                .addComponent(txtAfiliados, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                                .addComponent(lblCodigoIdentificador)
+                                .addComponent(txtCodigoIdentificador, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)))
+                        .addGap(37, 37, 37))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(btnAtras)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNombrePartido)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNombrePartido, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(lblSigla)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtSigla, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(lblNombreLider)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNombreLider, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblIdeologia)
+                .addGap(12, 12, 12)
+                .addComponent(txtIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(lblAfiliados)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(lblCodigoIdentificador)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCodigoIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnGuardar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAtrasActionPerformed
+
+    private void txtNombrePartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePartidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombrePartidoActionPerformed
+
+    private void txtNombreLiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreLiderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreLiderActionPerformed
+
+    private void txtIdeologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdeologiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdeologiaActionPerformed
+
+    private void txtAfiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAfiliadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAfiliadosActionPerformed
+
+    private void txtCodigoIdentificadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoIdentificadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoIdentificadorActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblAfiliados;
+    private javax.swing.JLabel lblCodigoIdentificador;
+    private javax.swing.JLabel lblDescripcion1;
+    private javax.swing.JLabel lblDescripcion2;
+    private javax.swing.JLabel lblIconEdit;
+    private javax.swing.JLabel lblIdeologia;
+    private javax.swing.JLabel lblNombreLider;
+    private javax.swing.JLabel lblNombrePartido;
+    private javax.swing.JLabel lblSigla;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JScrollPane scrollTablaID;
+    private javax.swing.JTable tableIdentificador;
+    private javax.swing.JTextField txtAfiliados;
+    private javax.swing.JTextField txtCodigoIdentificador;
+    private javax.swing.JTextField txtIdeologia;
+    private javax.swing.JTextField txtNombreLider;
+    private javax.swing.JTextField txtNombrePartido;
+    private javax.swing.JTextField txtSigla;
     // End of variables declaration//GEN-END:variables
 }

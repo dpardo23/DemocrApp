@@ -13,8 +13,11 @@ public class ConexionSQL {
     private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=NombreDeTuBaseDeDatos";
     private static final String USER = "tuUsuario";        // Usuario de la base de datos
     private static final String PASSWORD = "tuPassword";     // Contraseña de la base de datos
-
-    /**
+    
+    /*private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=DB_PArtidosPoliticos";
+    private static final String USER = "Ciudadano";
+    private static final String PASSWORD = "UMSS2025"; */ 
+    /** //Conexion a la base de datos
      * Retorna una conexión activa a la base de datos.
      * 
      * @return Connection objeto de conexión.

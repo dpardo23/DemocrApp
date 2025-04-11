@@ -4,17 +4,21 @@
  */
 package com.mycompany.democrapp.view;
 
+import com.mycompany.democrapp.controller.GraficasController;
+
 /**
  *
  * @author ASUS
  */
 public class GraficasdePopularidad extends javax.swing.JPanel {
 
+    GraficasController Graficas_popularidad;
     /**
      * Creates new form GraficasdePopularidad
      */
     public GraficasdePopularidad() {
         initComponents();
+        //Graficas_popularidad = new GraficasController(,this);
     }
 
     /**

@@ -14,5 +14,6 @@ public class DemocrApp {
 
         // Intentar iniciar sesión con los datos proporcionados
         loginController.iniciarSesion(usuario, contrasena);
+        //objetoconexion.establecerconexion()
     }
 }

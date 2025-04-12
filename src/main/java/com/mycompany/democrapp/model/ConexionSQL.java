@@ -10,13 +10,13 @@ import java.sql.SQLException;
 public class ConexionSQL {
     // URL de conexión. Cambia "NombreDeTuBaseDeDatos" por el nombre real de tu base de datos,
     // y ajusta el host/puerto según corresponda.
-    private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=NombreDeTuBaseDeDatos";
+    /*private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=NombreDeTuBaseDeDatos";
     private static final String USER = "tuUsuario";        // Usuario de la base de datos
-    private static final String PASSWORD = "tuPassword";     // Contraseña de la base de datos
+    private static final String PASSWORD = "tuPassword";     // Contraseña de la base de datos*/
     
-    /*private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=DB_PArtidosPoliticos";
+    private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=Partidos_Politicos;encrypt=false";
     private static final String USER = "Ciudadano";
-    private static final String PASSWORD = "UMSS2025"; */ 
+    private static final String PASSWORD = "UMSS2025"; 
     /** //Conexion a la base de datos
      * Retorna una conexión activa a la base de datos.
      * 

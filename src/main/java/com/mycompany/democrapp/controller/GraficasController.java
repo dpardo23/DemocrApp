@@ -4,20 +4,21 @@
  */
 package com.mycompany.democrapp.controller;
 
-import com.mycompany.democrapp.view.GraficasdePopularidad;
-import com.mycompany.democrapp.model.Partido_Ciudad;
+import com.mycompany.democrapp.view.VistaGraficas;
+import com.mycompany.democrapp.model.ModeloGraficas;
 /**
  *
  * @author ASUS
  */
 public class GraficasController {
-        private Partido_Ciudad Partido_Ciudad;
-        private GraficasdePopularidad GraficasdePopularidad;
+        private ModeloGraficas ModeloGraficas;
+        private VistaGraficas VistaGraficas;
         
-        public GraficasController(Partido_Ciudad Partido_Ciudad, GraficasdePopularidad GraficasPopularidad) {
-            this.Partido_Ciudad = Partido_Ciudad;
-            this.GraficasdePopularidad = GraficasPopularidad;
+        public GraficasController(ModeloGraficas ModeloGraficas, VistaGraficas VistaGraficas) {
+            this.ModeloGraficas = ModeloGraficas;
+            this.VistaGraficas = VistaGraficas;
         }
+        
     
     
 }

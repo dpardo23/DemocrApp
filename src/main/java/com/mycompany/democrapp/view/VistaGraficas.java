@@ -5,20 +5,23 @@
 package com.mycompany.democrapp.view;
 
 import com.mycompany.democrapp.controller.GraficasController;
+import com.mycompany.democrapp.model.ModeloGraficas;
 
 /**
  *
  * @author ASUS
  */
-public class GraficasdePopularidad extends javax.swing.JPanel {
+public class VistaGraficas extends javax.swing.JPanel {
 
-    GraficasController Graficas_popularidad;
+    GraficasController graficas;
     /**
      * Creates new form GraficasdePopularidad
      */
-    public GraficasdePopularidad() {
+    public VistaGraficas() {
         initComponents();
-        //Graficas_popularidad = new GraficasController(,this);
+        ModeloGraficas ModeloGraficas=new ModeloGraficas();
+        graficas = new GraficasController(ModeloGraficas,this);
+        //graficas;
     }
 
     /**

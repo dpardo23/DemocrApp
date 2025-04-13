@@ -15,6 +15,7 @@ public class RegistroDePartidos extends javax.swing.JFrame {
      */
     public RegistroDePartidos() {
         initComponents();
+        this.setLocationRelativeTo(null); // Centra la ventana
     }
 
     /**
@@ -29,9 +30,16 @@ public class RegistroDePartidos extends javax.swing.JFrame {
         panelRegistroDeDatos = new javax.swing.JPanel();
         jSplitPane1 = new javax.swing.JSplitPane();
         panelIzquierdo = new javax.swing.JPanel();
+        panelRegistroVista = new javax.swing.JPanel();
+        lblTitulo = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        lblTexto1 = new javax.swing.JLabel();
+        lblTexto2 = new javax.swing.JLabel();
+        lblTexto3 = new javax.swing.JLabel();
+        lblIconRegistro = new javax.swing.JLabel();
         panelDerecho = new javax.swing.JPanel();
         panelRegistro = new javax.swing.JPanel();
-        btnAtras = new javax.swing.JButton();
+        btnAtrasRegistro = new javax.swing.JButton();
         lblIdentificador = new javax.swing.JLabel();
         txtIdentificador = new javax.swing.JTextField();
         lblDepartamento = new javax.swing.JLabel();
@@ -47,10 +55,13 @@ public class RegistroDePartidos extends javax.swing.JFrame {
         lblFechaFundacion = new javax.swing.JLabel();
         txtFechaFundacion = new javax.swing.JTextField();
         btnGuardarRegistro = new javax.swing.JButton();
+        lblNombreLider = new javax.swing.JLabel();
+        txtNombreLider = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(700, 450));
 
+        panelRegistroDeDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         panelRegistroDeDatos.setMaximumSize(new java.awt.Dimension(700, 450));
         panelRegistroDeDatos.setMinimumSize(new java.awt.Dimension(700, 450));
 
@@ -61,6 +72,79 @@ public class RegistroDePartidos extends javax.swing.JFrame {
         panelIzquierdo.setMinimumSize(new java.awt.Dimension(350, 450));
         panelIzquierdo.setPreferredSize(new java.awt.Dimension(350, 450));
         panelIzquierdo.setLayout(new java.awt.CardLayout());
+
+        panelRegistroVista.setBackground(new java.awt.Color(81, 198, 186));
+        panelRegistroVista.setForeground(new java.awt.Color(255, 255, 255));
+        panelRegistroVista.setMaximumSize(new java.awt.Dimension(350, 450));
+        panelRegistroVista.setMinimumSize(new java.awt.Dimension(350, 450));
+
+        lblTitulo.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("Registro de Datos");
+
+        lblTexto1.setBackground(new java.awt.Color(81, 198, 186));
+        lblTexto1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblTexto1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTexto1.setText("Completa los datos necesarios para ");
+
+        lblTexto2.setBackground(new java.awt.Color(81, 198, 186));
+        lblTexto2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblTexto2.setForeground(new java.awt.Color(255, 255, 255));
+        lblTexto2.setText("incluir tu partido. Por favor, asegurate");
+
+        lblTexto3.setBackground(new java.awt.Color(81, 198, 186));
+        lblTexto3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblTexto3.setForeground(new java.awt.Color(255, 255, 255));
+        lblTexto3.setText("de que la informacion sea correcta.");
+
+        lblIconRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIconRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconRegistro.png"))); // NOI18N
+
+        javax.swing.GroupLayout panelRegistroVistaLayout = new javax.swing.GroupLayout(panelRegistroVista);
+        panelRegistroVista.setLayout(panelRegistroVistaLayout);
+        panelRegistroVistaLayout.setHorizontalGroup(
+            panelRegistroVistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRegistroVistaLayout.createSequentialGroup()
+                .addGroup(panelRegistroVistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRegistroVistaLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRegistroVistaLayout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRegistroVistaLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(panelRegistroVistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblTexto2, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                            .addComponent(lblTexto1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                            .addComponent(lblTexto3, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE))))
+                .addContainerGap(45, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistroVistaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblIconRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
+        );
+        panelRegistroVistaLayout.setVerticalGroup(
+            panelRegistroVistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRegistroVistaLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(lblTitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblTexto1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTexto2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTexto3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(lblIconRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        panelIzquierdo.add(panelRegistroVista, "card2");
+
         jSplitPane1.setLeftComponent(panelIzquierdo);
 
         panelDerecho.setBackground(new java.awt.Color(57, 72, 98));
@@ -74,13 +158,13 @@ public class RegistroDePartidos extends javax.swing.JFrame {
         panelRegistro.setMinimumSize(new java.awt.Dimension(350, 450));
         panelRegistro.setPreferredSize(new java.awt.Dimension(350, 450));
 
-        btnAtras.setBackground(new java.awt.Color(81, 198, 186));
-        btnAtras.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        btnAtras.setForeground(new java.awt.Color(255, 255, 255));
-        btnAtras.setText("<");
-        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+        btnAtrasRegistro.setBackground(new java.awt.Color(81, 198, 186));
+        btnAtrasRegistro.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnAtrasRegistro.setForeground(new java.awt.Color(255, 255, 255));
+        btnAtrasRegistro.setText("<");
+        btnAtrasRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtrasActionPerformed(evt);
+                btnAtrasRegistroActionPerformed(evt);
             }
         });
 
@@ -109,6 +193,11 @@ public class RegistroDePartidos extends javax.swing.JFrame {
         txtNombrePartido.setBackground(new java.awt.Color(57, 72, 98));
         txtNombrePartido.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         txtNombrePartido.setForeground(new java.awt.Color(255, 255, 255));
+        txtNombrePartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombrePartidoActionPerformed(evt);
+            }
+        });
 
         lblSigla.setBackground(new java.awt.Color(57, 72, 98));
         lblSigla.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -142,6 +231,11 @@ public class RegistroDePartidos extends javax.swing.JFrame {
         txtNumAfiliados.setBackground(new java.awt.Color(57, 72, 98));
         txtNumAfiliados.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         txtNumAfiliados.setForeground(new java.awt.Color(255, 255, 255));
+        txtNumAfiliados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumAfiliadosActionPerformed(evt);
+            }
+        });
 
         lblFechaFundacion.setBackground(new java.awt.Color(57, 72, 98));
         lblFechaFundacion.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -151,6 +245,11 @@ public class RegistroDePartidos extends javax.swing.JFrame {
         txtFechaFundacion.setBackground(new java.awt.Color(57, 72, 98));
         txtFechaFundacion.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         txtFechaFundacion.setForeground(new java.awt.Color(255, 255, 255));
+        txtFechaFundacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFechaFundacionActionPerformed(evt);
+            }
+        });
 
         btnGuardarRegistro.setBackground(new java.awt.Color(81, 198, 186));
         btnGuardarRegistro.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -158,46 +257,66 @@ public class RegistroDePartidos extends javax.swing.JFrame {
         btnGuardarRegistro.setText("Guardar");
         btnGuardarRegistro.setToolTipText("");
 
+        lblNombreLider.setBackground(new java.awt.Color(57, 72, 98));
+        lblNombreLider.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblNombreLider.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreLider.setText("Nombre del lider de partido");
+
+        txtNombreLider.setBackground(new java.awt.Color(57, 72, 98));
+        txtNombreLider.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtNombreLider.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout panelRegistroLayout = new javax.swing.GroupLayout(panelRegistro);
         panelRegistro.setLayout(panelRegistroLayout);
         panelRegistroLayout.setHorizontalGroup(
             panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRegistroLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(btnAtrasRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnGuardarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
+            .addGroup(panelRegistroLayout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNombrePartido, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombrePartido, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSigla, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSigla, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNumAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreLider, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNombreLider, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNumAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblFechaFundacion, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFechaFundacion, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lblDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblNombrePartido, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombrePartido, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblNumAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblFechaFundacion, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtFechaFundacion, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(panelRegistroLayout.createSequentialGroup()
+                            .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtIdentificador, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                .addComponent(lblIdentificador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lblSigla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtSigla, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)))))
                 .addContainerGap(45, Short.MAX_VALUE))
-            .addGroup(panelRegistroLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(btnAtras)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnGuardarRegistro)
-                .addGap(20, 20, 20))
         );
         panelRegistroLayout.setVerticalGroup(
             panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRegistroLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAtras)
+                    .addComponent(btnAtrasRegistro)
                     .addComponent(btnGuardarRegistro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSigla, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSigla, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -207,22 +326,22 @@ public class RegistroDePartidos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNombrePartido, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblSigla, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtSigla, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblNumAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNumAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblFechaFundacion, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtFechaFundacion, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblNombreLider, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNombreLider, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         panelDerecho.add(panelRegistro, "card2");
@@ -254,35 +373,55 @@ public class RegistroDePartidos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+    private void btnAtrasRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasRegistroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAtrasActionPerformed
+    }//GEN-LAST:event_btnAtrasRegistroActionPerformed
 
     private void txtIdeologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdeologiaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdeologiaActionPerformed
 
-    
+    private void txtNumAfiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumAfiliadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumAfiliadosActionPerformed
+
+    private void txtNombrePartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePartidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombrePartidoActionPerformed
+
+    private void txtFechaFundacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaFundacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFechaFundacionActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtras;
+    public javax.swing.JButton btnAtrasRegistro;
     public javax.swing.JButton btnGuardarRegistro;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSplitPane jSplitPane1;
     public javax.swing.JLabel lblDepartamento;
     public javax.swing.JLabel lblFechaFundacion;
+    private javax.swing.JLabel lblIconRegistro;
     public javax.swing.JLabel lblIdentificador;
     public javax.swing.JLabel lblIdeologia;
+    public javax.swing.JLabel lblNombreLider;
     public javax.swing.JLabel lblNombrePartido;
     public javax.swing.JLabel lblNumAfiliados;
     public javax.swing.JLabel lblSigla;
-    private javax.swing.JPanel panelDerecho;
-    private javax.swing.JPanel panelIzquierdo;
-    private javax.swing.JPanel panelRegistro;
+    private javax.swing.JLabel lblTexto1;
+    private javax.swing.JLabel lblTexto2;
+    private javax.swing.JLabel lblTexto3;
+    private javax.swing.JLabel lblTitulo;
+    public javax.swing.JPanel panelDerecho;
+    public javax.swing.JPanel panelIzquierdo;
+    public javax.swing.JPanel panelRegistro;
     private javax.swing.JPanel panelRegistroDeDatos;
+    public javax.swing.JPanel panelRegistroVista;
     public javax.swing.JTextField txtDepartamento;
     public javax.swing.JTextField txtFechaFundacion;
     public javax.swing.JTextField txtIdentificador;
     public javax.swing.JTextField txtIdeologia;
+    public javax.swing.JTextField txtNombreLider;
     public javax.swing.JTextField txtNombrePartido;
     public javax.swing.JTextField txtNumAfiliados;
     public javax.swing.JTextField txtSigla;

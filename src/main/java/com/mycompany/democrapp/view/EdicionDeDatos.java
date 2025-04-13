@@ -268,7 +268,7 @@ public class EdicionDeDatos extends javax.swing.JFrame {
                         .addGap(20, 20, 20))))
             .addGroup(panelEdicionLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(btnAtras)
+                .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelEdicionLayout.setVerticalGroup(
@@ -415,7 +415,7 @@ public class EdicionDeDatos extends javax.swing.JFrame {
         panelEdicionDeDatos.setLayout(panelEdicionDeDatosLayout);
         panelEdicionDeDatosLayout.setHorizontalGroup(
             panelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
+            .addComponent(jSplitPane1)
         );
         panelEdicionDeDatosLayout.setVerticalGroup(
             panelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

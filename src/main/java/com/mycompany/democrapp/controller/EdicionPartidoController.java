@@ -26,13 +26,19 @@ public class EdicionPartidoController {
                 String editNombrePartido = ValidarDatos.validarNombrePartido(vista.txtNombrePartido.getText());
                 String editSigla = ValidarDatos.validarSigla(vista.txtSigla.getText());
                 String editNombreLider = ValidarDatos.validarNombreLider(vista.txtNombreLider.getText());
-                ValidarDatos.verificarDuplicados(editNombrePartido, editSigla, editNombreLider, 0, modelo); //verificar que no haya repetidos
+                
+                
+                //ValidarDatos.verificarDuplicados(editNombrePartido, editSigla, editNombreLider, 0, modelo); //verificar que no haya repetidos
+                
+                
+                
+                
                 int editDepartamento = ValidarDatos.validarDepartamento(vista.txtDepartamento.getText());
                 int editNumAfiliados = ValidarDatos.validarNumAfiliados(vista.txtAfiliados.getText());
                 String editIdeologia = ValidarDatos.validarIdeologia(vista.txtIdeologia.getText());
 
                 // Guardar los datos del equipo en la base de datos
-                modelo.guardarPartido(0, editNombrePartido, editSigla, editNombreLider, editIdeologia, editNumAfiliados, editDepartamento);
+                //modelo.guardarPartido(0, editNombrePartido, editSigla, editNombreLider, editIdeologia, editNumAfiliados, editDepartamento);
 
                 // Mostrar un mensaje que diga que todo salió bien
                 JOptionPane.showMessageDialog(null, "Datos guardados correctamente.");
@@ -61,12 +67,6 @@ public class EdicionPartidoController {
             vista.panelEdicion.setVisible(true);
             vista.panelTabla.setVisible(false);
         });
-    }
-
-    // Método para iniciar la interfaz gráfica
-    public void iniciar() {
-        // Mostrar directamente el JFrame si vista es un JFrame
-        vista.setVisible(true);
     }
 }
 

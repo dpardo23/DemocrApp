@@ -26,14 +26,12 @@ public class EdicionDeDatos extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanelEdicionDeDatos = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         lblDescripcion1 = new javax.swing.JLabel();
         lblDescripcion2 = new javax.swing.JLabel();
         lblIconEdit = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        scrollTablaID = new javax.swing.JScrollPane();
-        tableIdentificador = new javax.swing.JTable();
         btnAtras = new javax.swing.JButton();
         lblNombrePartido = new javax.swing.JLabel();
         txtNombrePartido = new javax.swing.JTextField();
@@ -45,8 +43,8 @@ public class EdicionDeDatos extends javax.swing.JPanel {
         txtIdeologia = new javax.swing.JTextField();
         lblAfiliados = new javax.swing.JLabel();
         txtAfiliados = new javax.swing.JTextField();
-        lblCodigoIdentificador = new javax.swing.JLabel();
-        txtCodigoIdentificador = new javax.swing.JTextField();
+        lblDepartamento = new javax.swing.JLabel();
+        txtDepartamento = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(57, 72, 98));
@@ -54,10 +52,10 @@ public class EdicionDeDatos extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(700, 450));
         setMinimumSize(new java.awt.Dimension(700, 450));
 
-        jPanel1.setBackground(new java.awt.Color(81, 198, 186));
-        jPanel1.setMaximumSize(new java.awt.Dimension(350, 450));
-        jPanel1.setMinimumSize(new java.awt.Dimension(350, 450));
-        jPanel1.setPreferredSize(new java.awt.Dimension(350, 450));
+        jPanelEdicionDeDatos.setBackground(new java.awt.Color(81, 198, 186));
+        jPanelEdicionDeDatos.setMaximumSize(new java.awt.Dimension(350, 450));
+        jPanelEdicionDeDatos.setMinimumSize(new java.awt.Dimension(350, 450));
+        jPanelEdicionDeDatos.setPreferredSize(new java.awt.Dimension(350, 450));
 
         lblTitulo.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -66,11 +64,11 @@ public class EdicionDeDatos extends javax.swing.JPanel {
         lblDescripcion1.setBackground(new java.awt.Color(255, 255, 255));
         lblDescripcion1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         lblDescripcion1.setForeground(new java.awt.Color(255, 255, 255));
-        lblDescripcion1.setText("En esta seccion puedes actualizar la informacion");
+        lblDescripcion1.setText("En esta seccion puedes actualizar toda la");
 
         lblDescripcion2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         lblDescripcion2.setForeground(new java.awt.Color(255, 255, 255));
-        lblDescripcion2.setText("del partido politico.");
+        lblDescripcion2.setText("informacion de un partido politico.");
 
         lblIconEdit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIconEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconEdit.png"))); // NOI18N
@@ -78,72 +76,32 @@ public class EdicionDeDatos extends javax.swing.JPanel {
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setMaximumSize(new java.awt.Dimension(32767, 8));
 
-        tableIdentificador.setBackground(new java.awt.Color(81, 198, 186));
-        tableIdentificador.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
-        tableIdentificador.setForeground(new java.awt.Color(255, 255, 255));
-        tableIdentificador.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Identificador", "Nombre"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tableIdentificador.setGridColor(new java.awt.Color(255, 255, 255));
-        tableIdentificador.setMaximumSize(new java.awt.Dimension(300, 80));
-        tableIdentificador.setMinimumSize(new java.awt.Dimension(300, 80));
-        tableIdentificador.setPreferredSize(new java.awt.Dimension(300, 80));
-        tableIdentificador.setSelectionBackground(new java.awt.Color(57, 72, 98));
-        tableIdentificador.setSelectionForeground(new java.awt.Color(57, 72, 98));
-        scrollTablaID.setViewportView(tableIdentificador);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelEdicionDeDatosLayout = new javax.swing.GroupLayout(jPanelEdicionDeDatos);
+        jPanelEdicionDeDatos.setLayout(jPanelEdicionDeDatosLayout);
+        jPanelEdicionDeDatosLayout.setHorizontalGroup(
+            jPanelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEdicionDeDatosLayout.createSequentialGroup()
+                .addGroup(jPanelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelEdicionDeDatosLayout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addComponent(lblTitulo))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelEdicionDeDatosLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblDescripcion2)
-                            .addComponent(lblDescripcion1)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(lblDescripcion1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelEdicionDeDatosLayout.createSequentialGroup()
                         .addGap(118, 118, 118)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanelEdicionDeDatosLayout.createSequentialGroup()
                         .addGap(81, 81, 81)
-                        .addComponent(lblIconEdit))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(scrollTablaID, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                        .addComponent(lblIconEdit)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+        jPanelEdicionDeDatosLayout.setVerticalGroup(
+            jPanelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEdicionDeDatosLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
                 .addComponent(lblTitulo)
                 .addGap(2, 2, 2)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -151,11 +109,9 @@ public class EdicionDeDatos extends javax.swing.JPanel {
                 .addComponent(lblDescripcion1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblDescripcion2)
-                .addGap(35, 35, 35)
+                .addGap(60, 60, 60)
                 .addComponent(lblIconEdit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(scrollTablaID, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         btnAtras.setBackground(new java.awt.Color(81, 198, 186));
@@ -228,16 +184,16 @@ public class EdicionDeDatos extends javax.swing.JPanel {
             }
         });
 
-        lblCodigoIdentificador.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        lblCodigoIdentificador.setForeground(new java.awt.Color(255, 255, 255));
-        lblCodigoIdentificador.setText("Codigo identificador");
+        lblDepartamento.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblDepartamento.setForeground(new java.awt.Color(255, 255, 255));
+        lblDepartamento.setText("Departamento");
 
-        txtCodigoIdentificador.setBackground(new java.awt.Color(57, 72, 98));
-        txtCodigoIdentificador.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        txtCodigoIdentificador.setForeground(new java.awt.Color(255, 255, 255));
-        txtCodigoIdentificador.addActionListener(new java.awt.event.ActionListener() {
+        txtDepartamento.setBackground(new java.awt.Color(57, 72, 98));
+        txtDepartamento.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
+        txtDepartamento.setForeground(new java.awt.Color(255, 255, 255));
+        txtDepartamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoIdentificadorActionPerformed(evt);
+                txtDepartamentoActionPerformed(evt);
             }
         });
 
@@ -251,7 +207,7 @@ public class EdicionDeDatos extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelEdicionDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -269,8 +225,8 @@ public class EdicionDeDatos extends javax.swing.JPanel {
                                 .addComponent(txtIdeologia)
                                 .addComponent(lblAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtAfiliados)
-                                .addComponent(lblCodigoIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtCodigoIdentificador)
+                                .addComponent(lblDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtDepartamento)
                                 .addComponent(lblNombrePartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lblSigla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lblNombreLider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -279,7 +235,7 @@ public class EdicionDeDatos extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelEdicionDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
@@ -305,9 +261,9 @@ public class EdicionDeDatos extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(lblCodigoIdentificador)
+                .addComponent(lblDepartamento)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtCodigoIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnGuardar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -334,18 +290,18 @@ public class EdicionDeDatos extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAfiliadosActionPerformed
 
-    private void txtCodigoIdentificadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoIdentificadorActionPerformed
+    private void txtDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDepartamentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoIdentificadorActionPerformed
+    }//GEN-LAST:event_txtDepartamentoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanelEdicionDeDatos;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblAfiliados;
-    private javax.swing.JLabel lblCodigoIdentificador;
+    private javax.swing.JLabel lblDepartamento;
     private javax.swing.JLabel lblDescripcion1;
     private javax.swing.JLabel lblDescripcion2;
     private javax.swing.JLabel lblIconEdit;
@@ -354,10 +310,8 @@ public class EdicionDeDatos extends javax.swing.JPanel {
     private javax.swing.JLabel lblNombrePartido;
     private javax.swing.JLabel lblSigla;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JScrollPane scrollTablaID;
-    private javax.swing.JTable tableIdentificador;
     private javax.swing.JTextField txtAfiliados;
-    private javax.swing.JTextField txtCodigoIdentificador;
+    private javax.swing.JTextField txtDepartamento;
     private javax.swing.JTextField txtIdeologia;
     private javax.swing.JTextField txtNombreLider;
     private javax.swing.JTextField txtNombrePartido;

@@ -1,10 +1,12 @@
 package com.mycompany.democrapp.main;
 
 import com.mycompany.democrapp.controller.LoginController;
+import com.mycompany.democrapp.model.EdicionPartido;
 
 public class DemocrApp {
 
     public static void main(String[] args) {
+        new EdicionPartido().setVisible(true);
         // Crear una instancia del controlador de login
         LoginController loginController = new LoginController();
 

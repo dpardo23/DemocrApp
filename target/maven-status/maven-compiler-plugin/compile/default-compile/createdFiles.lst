@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 com\mycompany\democrapp\model\Partido_Ciudad.class
 com\mycompany\democrapp\controller\EdicionPartidoController.class
 com\mycompany\democrapp\main\Graficas.class
@@ -22,3 +23,16 @@ com\mycompany\democrapp\view\GraficasdePopularidad.class
 com\mycompany\democrapp\view\LoginCredenciales.class
 com\mycompany\democrapp\view\registroPartidosPoliticos.class
 com\mycompany\democrapp\main\DemocrApp.class
+=======
+com\mycompany\democrapp\main\prueba$2.class
+com\mycompany\democrapp\view\VistaGraficas$1.class
+com\mycompany\democrapp\main\Graficas.class
+com\mycompany\democrapp\main\prueba.class
+com\mycompany\democrapp\main\prueba$prueba2.class
+com\mycompany\democrapp\model\ModeloGraficas$prueba.class
+com\mycompany\democrapp\view\VistaGraficas$2.class
+com\mycompany\democrapp\controller\GraficasController.class
+com\mycompany\democrapp\main\prueba$1.class
+com\mycompany\democrapp\model\ModeloGraficas.class
+com\mycompany\democrapp\view\VistaGraficas.class
+>>>>>>> 8c72b0ecd0b6c9daa1693fa4c2ded99aeb8b2f98

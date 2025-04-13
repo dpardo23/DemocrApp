@@ -4,8 +4,9 @@
  */
 package com.mycompany.democrapp.main;
 
-import com.mycompany.democrapp.view.GraficasdePopularidad;
-import com.mycompany.democrapp.model.Partido_Ciudad;
+import com.mycompany.democrapp.controller.GraficasController;
+import com.mycompany.democrapp.view.VistaGraficas;
+import com.mycompany.democrapp.model.ModeloGraficas;
 
 /**
  *
@@ -17,7 +18,11 @@ public class Graficas {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+            VistaGraficas Vista=new VistaGraficas();
+            ModeloGraficas modelo=new ModeloGraficas();
+            //Vista.setVisible(true);
+            GraficasController GraficasController=new GraficasController(modelo,Vista);
+            Vista.setVisible(true);
     } 
     
 }

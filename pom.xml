@@ -50,10 +50,19 @@
             <artifactId>mssql-jdbc</artifactId>
             <version>12.8.1.jre11</version>
         </dependency>
+<<<<<<< HEAD
         <dependency>
             <groupId>org.netbeans.external</groupId>
             <artifactId>AbsoluteLayout</artifactId>
             <version>RELEASE250</version>
+=======
+        
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.5.5</version>
+            <type>jar</type>
+>>>>>>> 8c72b0ecd0b6c9daa1693fa4c2ded99aeb8b2f98
         </dependency>
     </dependencies>
     <name>DemocrApp</name>

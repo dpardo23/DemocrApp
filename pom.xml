@@ -4,11 +4,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-         
+
     <!-- Especifica la versión del modelo del POM -->
     <modelVersion>4.0.0</modelVersion>
     
-    <!-- Grupo al que pertenece el proyecto (naming convention similar a paquetes Java) -->
+    <!-- Grupo al que pertenece el proyecto -->
     <groupId>com.mycompany</groupId>
     
     <!-- Nombre del artefacto del proyecto -->
@@ -28,8 +28,8 @@
         <!-- Versión del compilador de Java a usar -->
         <maven.compiler.release>24</maven.compiler.release>
         
-        <!-- Clase principal para ejecutar el programa (entry point) -->
-        <exec.mainClass>com.mycompany.democraapp.DemocraApp</exec.mainClass>
+        <!-- Clase principal para ejecutar el programa -->
+        <exec.mainClass>com.mycompany.democrapp.DemocrApp</exec.mainClass>
     </properties>
     
     <!-- Configuración de compilación -->
@@ -50,20 +50,22 @@
             <artifactId>mssql-jdbc</artifactId>
             <version>12.8.1.jre11</version>
         </dependency>
-<<<<<<< HEAD
+        
+        <!-- Dependencia para el layout absoluto (NetBeans) -->
         <dependency>
             <groupId>org.netbeans.external</groupId>
             <artifactId>AbsoluteLayout</artifactId>
             <version>RELEASE250</version>
-=======
+        </dependency>
         
+        <!-- Dependencia para la biblioteca JFreeChart -->
         <dependency>
             <groupId>org.jfree</groupId>
             <artifactId>jfreechart</artifactId>
             <version>1.5.5</version>
-            <type>jar</type>
->>>>>>> 8c72b0ecd0b6c9daa1693fa4c2ded99aeb8b2f98
         </dependency>
     </dependencies>
+    
+    <!-- Nombre del proyecto -->
     <name>DemocrApp</name>
 </project>

@@ -5,10 +5,7 @@ package com.mycompany.democrapp.controller;
 import com.mycompany.democrapp.model.ConexionSQL;
 import com.mycompany.democrapp.model.ValidarDatos;
 import com.mycompany.democrapp.view.EdicionDeDatos;
-import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 // Esta clase controla la lógica del formulario de equipos deportivos
@@ -16,7 +13,7 @@ public class EdicionPartidoController {
 
     // Aquí se guarda una referencia al formulario que el usuario ve
     private final EdicionDeDatos vista;
-    
+
     // Constructor que recibe el modelo (base de datos) y la vista (interfaz gráfica)
     public EdicionPartidoController(ConexionSQL modelo, EdicionDeDatos vista) {
         this.vista = vista;
@@ -33,10 +30,10 @@ public class EdicionPartidoController {
                 int editDepartamento = ValidarDatos.validarDepartamento(vista.txtDepartamento.getText());
                 int editNumAfiliados = ValidarDatos.validarNumAfiliados(vista.txtAfiliados.getText());
                 String editIdeologia = ValidarDatos.validarIdeologia(vista.txtIdeologia.getText());
-                
+
                 // Guardar los datos del equipo en la base de datos
                 modelo.guardarPartido(0, editNombrePartido, editSigla, editNombreLider, editIdeologia, editNumAfiliados, editDepartamento);
-                
+
                 // Mostrar un mensaje que diga que todo salió bien
                 JOptionPane.showMessageDialog(null, "Datos guardados correctamente.");
             } catch (IllegalArgumentException ex) {
@@ -45,26 +42,32 @@ public class EdicionPartidoController {
             }
         });
 
-        // Acción para el botón "Cancelar"
+        // Acción para el botón "Atras"
         this.vista.btnAtras.addActionListener((ActionEvent e) -> {
-            
-          
+            // Mostrar un dialogo de confirmacion
+            String mensajeAtras = "¿Estás seguro de que deseas regresar al panel de tabla?";
+            int respuesta = JOptionPane.showConfirmDialog(null, mensajeAtras, "Confirmacion", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            // Verificar la respuesta del usuario
+            if (respuesta == JOptionPane.YES_NO_OPTION) {
+                vista.panelTabla.setVisible(true);
+                vista.panelEdicion.setVisible(false);
+            } else {
+                vista.panelTabla.setVisible(false);
+                vista.panelEdicion.setVisible(true);
+            }
+        });
+
+        this.vista.btnValidar.addActionListener((ActionEvent e) -> {
+            vista.panelEdicion.setVisible(true);
+            vista.panelTabla.setVisible(false);
         });
     }
 
     // Método para iniciar la interfaz gráfica
     public void iniciar() {
-        // Crear una ventana con el título del formulario
-        JFrame frame = new JFrame("Formulario Equipos Deportivos");
-
-        // Configurar lo básico de la ventana: tamaño, comportamiento al cerrarla, etc.
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(700, 450);
-        frame.setResizable(false);
-        frame.setLocationRelativeTo(null);
-
-        // Agregar el formulario (vista) a la ventana y hacerla visible
-        frame.add(vista);
-        frame.setVisible(true);
+        // Mostrar directamente el JFrame si vista es un JFrame
+        vista.setVisible(true);
     }
 }
+
+

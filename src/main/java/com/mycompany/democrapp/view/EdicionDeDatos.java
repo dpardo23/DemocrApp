@@ -176,6 +176,7 @@ public class EdicionDeDatos extends javax.swing.JFrame {
 
         txtNombrePartido.setBackground(new java.awt.Color(57, 72, 98));
         txtNombrePartido.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtNombrePartido.setForeground(new java.awt.Color(255, 255, 255));
         txtNombrePartido.setMaximumSize(new java.awt.Dimension(68, 26));
 
         lblSigla.setBackground(new java.awt.Color(57, 72, 98));
@@ -185,6 +186,7 @@ public class EdicionDeDatos extends javax.swing.JFrame {
 
         txtSigla.setBackground(new java.awt.Color(57, 72, 98));
         txtSigla.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtSigla.setForeground(new java.awt.Color(255, 255, 255));
 
         lblNombreLider.setBackground(new java.awt.Color(57, 72, 98));
         lblNombreLider.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -193,6 +195,7 @@ public class EdicionDeDatos extends javax.swing.JFrame {
 
         txtNombreLider.setBackground(new java.awt.Color(57, 72, 98));
         txtNombreLider.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtNombreLider.setForeground(new java.awt.Color(255, 255, 255));
 
         lblIdeologia.setBackground(new java.awt.Color(57, 72, 98));
         lblIdeologia.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -201,6 +204,7 @@ public class EdicionDeDatos extends javax.swing.JFrame {
 
         txtIdeologia.setBackground(new java.awt.Color(57, 72, 98));
         txtIdeologia.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtIdeologia.setForeground(new java.awt.Color(255, 255, 255));
 
         lblAfiliados.setBackground(new java.awt.Color(57, 72, 98));
         lblAfiliados.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -209,6 +213,7 @@ public class EdicionDeDatos extends javax.swing.JFrame {
 
         txtAfiliados.setBackground(new java.awt.Color(57, 72, 98));
         txtAfiliados.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtAfiliados.setForeground(new java.awt.Color(255, 255, 255));
         txtAfiliados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAfiliadosActionPerformed(evt);
@@ -222,6 +227,7 @@ public class EdicionDeDatos extends javax.swing.JFrame {
 
         txtDepartamento.setBackground(new java.awt.Color(57, 72, 98));
         txtDepartamento.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtDepartamento.setForeground(new java.awt.Color(255, 255, 255));
 
         btnGuardar.setBackground(new java.awt.Color(81, 198, 186));
         btnGuardar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -342,7 +348,7 @@ public class EdicionDeDatos extends javax.swing.JFrame {
         });
         jTable1.setGridColor(new java.awt.Color(51, 51, 51));
         jTable1.setSelectionBackground(new java.awt.Color(81, 198, 186));
-        jTable1.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        jTable1.setSelectionForeground(new java.awt.Color(57, 72, 98));
         scrollTable.setViewportView(jTable1);
 
         lblCodigoIdentificador.setBackground(new java.awt.Color(57, 72, 98));
@@ -352,6 +358,7 @@ public class EdicionDeDatos extends javax.swing.JFrame {
 
         txtCodigoIdentificador.setBackground(new java.awt.Color(57, 72, 98));
         txtCodigoIdentificador.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtCodigoIdentificador.setForeground(new java.awt.Color(255, 255, 255));
 
         btnValidar.setBackground(new java.awt.Color(81, 198, 186));
         btnValidar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -408,7 +415,7 @@ public class EdicionDeDatos extends javax.swing.JFrame {
         panelEdicionDeDatos.setLayout(panelEdicionDeDatosLayout);
         panelEdicionDeDatosLayout.setHorizontalGroup(
             panelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
         );
         panelEdicionDeDatosLayout.setVerticalGroup(
             panelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -473,12 +480,12 @@ public class EdicionDeDatos extends javax.swing.JFrame {
     private javax.swing.JLabel lblTexto1;
     private javax.swing.JLabel lblTexto2;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JPanel panelDerecho;
-    private javax.swing.JPanel panelEdicion;
+    public javax.swing.JPanel panelDerecho;
+    public javax.swing.JPanel panelEdicion;
     private javax.swing.JPanel panelEdicionDeDatos;
-    private javax.swing.JPanel panelIzquierdo;
+    public javax.swing.JPanel panelIzquierdo;
     private javax.swing.JPanel panelPresentacion;
-    private javax.swing.JPanel panelTabla;
+    public javax.swing.JPanel panelTabla;
     private javax.swing.JScrollPane scrollTable;
     public javax.swing.JTextField txtAfiliados;
     public javax.swing.JTextField txtCodigoIdentificador;

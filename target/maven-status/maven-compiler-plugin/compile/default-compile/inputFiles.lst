@@ -1,15 +1,12 @@
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\controller\EdicionPartidoController.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\controller\GraficasController.java
-C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\controller\LoginController.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\main\DemocrApp.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\main\Graficas.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\model\ConexionSQL.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\model\EdicionPartido.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\model\Partido_Ciudad.java
-C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\model\Usuario.java
-C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\model\UsuarioDAO.java
+C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\model\ValidarDatos.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\view\EdicionDeDatos.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\view\GraficasdePopularidad.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\view\LoginCredenciales.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\view\registroPartidosPoliticos.java
-C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\view\TablaEdicionDeDatos.java

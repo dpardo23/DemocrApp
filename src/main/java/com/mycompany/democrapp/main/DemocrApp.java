@@ -1,21 +1,22 @@
 package com.mycompany.democrapp.main;
 
-import com.mycompany.democrapp.controller.LoginController;
-import com.mycompany.democrapp.model.EdicionPartido;
+import com.mycompany.democrapp.controller.EdicionPartidoController;
+import com.mycompany.democrapp.model.ConexionSQL;
+import com.mycompany.democrapp.view.EdicionDeDatos;
 
 public class DemocrApp {
-
     public static void main(String[] args) {
-        new EdicionPartido().setVisible(true);
-        // Crear una instancia del controlador de login
-        LoginController loginController = new LoginController();
+        
+        // Crear una instancia del modelo (se conecta con la base de datos)
+        ConexionSQL modelo = new ConexionSQL();
 
-        // Simulación de entrada (temporal, para pruebas)
-        String usuario = "admin"; // Reemplaza por datos reales para pruebas
-        String contrasena = "12345"; // Reemplaza por datos reales para pruebas
+        // Crear una instancia de la vista (formulario que verá el usuario)
+        EdicionDeDatos vista = new EdicionDeDatos();
 
-        // Intentar iniciar sesión con los datos proporcionados
-        loginController.iniciarSesion(usuario, contrasena);
-        //objetoconexion.establecerconexion()
+        // Crear una instancia del controlador (conecta la vista y el modelo)
+        EdicionPartidoController controlador = new EdicionPartidoController(modelo, vista);
+
+        // Llamar al método que inicia la interfaz gráfica
+        controlador.iniciar();
     }
 }

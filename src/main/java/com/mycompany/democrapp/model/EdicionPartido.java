@@ -4,15 +4,13 @@ public class EdicionPartido {
     private int id;
     private String nombre;
 
+    // Constructor con parámetros
     public EdicionPartido(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
 
-    public EdicionPartido() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    // Getters y Setters
     public int getId() {
         return id;
     }
@@ -27,9 +25,5 @@ public class EdicionPartido {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public void setVisible(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

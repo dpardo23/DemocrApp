@@ -1,17 +1,19 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.democrapp.view;
+
+import java.awt.CardLayout;
 
 /**
  *
  * @author DIEGO
  */
-public class EdicionDeDatos extends javax.swing.JPanel {
+public class EdicionDeDatos extends javax.swing.JFrame {
 
     /**
-     * Creates new form EdicionDeDatos
+     * Creates new form EdicionRegistroDeDatos
      */
     public EdicionDeDatos() {
         initComponents();
@@ -26,12 +28,17 @@ public class EdicionDeDatos extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelEdicionDeDatos = new javax.swing.JPanel();
+        panelEdicionDeDatos = new javax.swing.JPanel();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        panelIzquierdo = new javax.swing.JPanel();
+        panelPresentacion = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
-        lblDescripcion1 = new javax.swing.JLabel();
-        lblDescripcion2 = new javax.swing.JLabel();
-        lblIconEdit = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        lblTexto1 = new javax.swing.JLabel();
+        lblTexto2 = new javax.swing.JLabel();
+        lblIconEdit = new javax.swing.JLabel();
+        panelDerecho = new javax.swing.JPanel();
+        panelEdicion = new javax.swing.JPanel();
         btnAtras = new javax.swing.JButton();
         lblNombrePartido = new javax.swing.JLabel();
         txtNombrePartido = new javax.swing.JTextField();
@@ -46,73 +53,111 @@ public class EdicionDeDatos extends javax.swing.JPanel {
         lblDepartamento = new javax.swing.JLabel();
         txtDepartamento = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
+        panelTabla = new javax.swing.JPanel();
+        btnAtrasTabla = new javax.swing.JButton();
+        scrollTable = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        lblCodigoIdentificador = new javax.swing.JLabel();
+        txtCodigoIdentificador = new javax.swing.JTextField();
+        btnValidar = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(57, 72, 98));
-        setForeground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(700, 450));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(700, 450));
 
-        jPanelEdicionDeDatos.setBackground(new java.awt.Color(81, 198, 186));
-        jPanelEdicionDeDatos.setMaximumSize(new java.awt.Dimension(350, 450));
-        jPanelEdicionDeDatos.setMinimumSize(new java.awt.Dimension(350, 450));
-        jPanelEdicionDeDatos.setPreferredSize(new java.awt.Dimension(350, 450));
+        panelEdicionDeDatos.setBackground(new java.awt.Color(81, 198, 186));
+        panelEdicionDeDatos.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        panelEdicionDeDatos.setMaximumSize(new java.awt.Dimension(700, 450));
+        panelEdicionDeDatos.setMinimumSize(new java.awt.Dimension(700, 450));
+        panelEdicionDeDatos.setPreferredSize(new java.awt.Dimension(700, 450));
 
-        lblTitulo.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jSplitPane1.setDividerSize(1);
+        jSplitPane1.setForeground(new java.awt.Color(255, 255, 255));
+
+        panelIzquierdo.setBackground(new java.awt.Color(81, 198, 186));
+        panelIzquierdo.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        panelIzquierdo.setMaximumSize(new java.awt.Dimension(350, 450));
+        panelIzquierdo.setMinimumSize(new java.awt.Dimension(350, 450));
+        panelIzquierdo.setPreferredSize(new java.awt.Dimension(350, 450));
+        panelIzquierdo.setLayout(new java.awt.CardLayout());
+
+        panelPresentacion.setBackground(new java.awt.Color(81, 198, 186));
+        panelPresentacion.setMaximumSize(new java.awt.Dimension(350, 450));
+        panelPresentacion.setMinimumSize(new java.awt.Dimension(350, 450));
+
+        lblTitulo.setBackground(new java.awt.Color(81, 198, 186));
+        lblTitulo.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Edicion de Datos");
 
-        lblDescripcion1.setBackground(new java.awt.Color(255, 255, 255));
-        lblDescripcion1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        lblDescripcion1.setForeground(new java.awt.Color(255, 255, 255));
-        lblDescripcion1.setText("En esta seccion puedes actualizar toda la");
+        jSeparator1.setBackground(new java.awt.Color(81, 198, 186));
+        jSeparator1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jSeparator1.setMaximumSize(new java.awt.Dimension(100, 5));
+        jSeparator1.setMinimumSize(new java.awt.Dimension(100, 5));
+        jSeparator1.setPreferredSize(new java.awt.Dimension(100, 5));
 
-        lblDescripcion2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        lblDescripcion2.setForeground(new java.awt.Color(255, 255, 255));
-        lblDescripcion2.setText("informacion de un partido politico.");
+        lblTexto1.setBackground(new java.awt.Color(81, 198, 186));
+        lblTexto1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblTexto1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTexto1.setText("En esta seccion puedes actualizar toda");
+
+        lblTexto2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblTexto2.setForeground(new java.awt.Color(255, 255, 255));
+        lblTexto2.setText("la informacion de un partido politico.");
 
         lblIconEdit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIconEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconEdit.png"))); // NOI18N
 
-        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
-        jSeparator1.setMaximumSize(new java.awt.Dimension(32767, 8));
-
-        javax.swing.GroupLayout jPanelEdicionDeDatosLayout = new javax.swing.GroupLayout(jPanelEdicionDeDatos);
-        jPanelEdicionDeDatos.setLayout(jPanelEdicionDeDatosLayout);
-        jPanelEdicionDeDatosLayout.setHorizontalGroup(
-            jPanelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEdicionDeDatosLayout.createSequentialGroup()
-                .addGroup(jPanelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelEdicionDeDatosLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(lblTitulo))
-                    .addGroup(jPanelEdicionDeDatosLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblDescripcion2)
-                            .addComponent(lblDescripcion1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelEdicionDeDatosLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelPresentacionLayout = new javax.swing.GroupLayout(panelPresentacion);
+        panelPresentacion.setLayout(panelPresentacionLayout);
+        panelPresentacionLayout.setHorizontalGroup(
+            panelPresentacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPresentacionLayout.createSequentialGroup()
+                .addGroup(panelPresentacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelPresentacionLayout.createSequentialGroup()
                         .addGap(118, 118, 118)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelEdicionDeDatosLayout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(lblIconEdit)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelPresentacionLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(panelPresentacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblTexto1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                            .addComponent(lblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                            .addComponent(lblTexto2, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                            .addComponent(lblIconEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
-        jPanelEdicionDeDatosLayout.setVerticalGroup(
-            jPanelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEdicionDeDatosLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
+        panelPresentacionLayout.setVerticalGroup(
+            panelPresentacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelPresentacionLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addComponent(lblTitulo)
-                .addGap(2, 2, 2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblTexto1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblDescripcion1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblDescripcion2)
-                .addGap(60, 60, 60)
-                .addComponent(lblIconEdit)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addComponent(lblTexto2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(lblIconEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(63, Short.MAX_VALUE))
         );
+
+        panelIzquierdo.add(panelPresentacion, "card2");
+
+        jSplitPane1.setLeftComponent(panelIzquierdo);
+
+        panelDerecho.setBackground(new java.awt.Color(57, 72, 98));
+        panelDerecho.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        panelDerecho.setMaximumSize(new java.awt.Dimension(350, 450));
+        panelDerecho.setMinimumSize(new java.awt.Dimension(350, 450));
+        panelDerecho.setLayout(new java.awt.CardLayout());
+
+        panelEdicion.setBackground(new java.awt.Color(57, 72, 98));
+        panelEdicion.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        panelEdicion.setMaximumSize(new java.awt.Dimension(350, 450));
+        panelEdicion.setMinimumSize(new java.awt.Dimension(350, 450));
+        panelEdicion.setPreferredSize(new java.awt.Dimension(350, 450));
 
         btnAtras.setBackground(new java.awt.Color(81, 198, 186));
         btnAtras.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -124,197 +169,323 @@ public class EdicionDeDatos extends javax.swing.JPanel {
             }
         });
 
+        lblNombrePartido.setBackground(new java.awt.Color(57, 72, 98));
         lblNombrePartido.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         lblNombrePartido.setForeground(new java.awt.Color(255, 255, 255));
         lblNombrePartido.setText("Nombre del partido politico");
 
         txtNombrePartido.setBackground(new java.awt.Color(57, 72, 98));
-        txtNombrePartido.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        txtNombrePartido.setForeground(new java.awt.Color(255, 255, 255));
-        txtNombrePartido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombrePartidoActionPerformed(evt);
-            }
-        });
+        txtNombrePartido.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtNombrePartido.setMaximumSize(new java.awt.Dimension(68, 26));
 
+        lblSigla.setBackground(new java.awt.Color(57, 72, 98));
         lblSigla.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         lblSigla.setForeground(new java.awt.Color(255, 255, 255));
         lblSigla.setText("Sigla");
 
         txtSigla.setBackground(new java.awt.Color(57, 72, 98));
-        txtSigla.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        txtSigla.setForeground(new java.awt.Color(255, 255, 255));
+        txtSigla.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
 
+        lblNombreLider.setBackground(new java.awt.Color(57, 72, 98));
         lblNombreLider.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         lblNombreLider.setForeground(new java.awt.Color(255, 255, 255));
         lblNombreLider.setText("Nombre del lider");
 
         txtNombreLider.setBackground(new java.awt.Color(57, 72, 98));
-        txtNombreLider.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        txtNombreLider.setForeground(new java.awt.Color(255, 255, 255));
-        txtNombreLider.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreLiderActionPerformed(evt);
-            }
-        });
+        txtNombreLider.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
 
+        lblIdeologia.setBackground(new java.awt.Color(57, 72, 98));
         lblIdeologia.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         lblIdeologia.setForeground(new java.awt.Color(255, 255, 255));
         lblIdeologia.setText("Ideologia");
 
         txtIdeologia.setBackground(new java.awt.Color(57, 72, 98));
-        txtIdeologia.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        txtIdeologia.setForeground(new java.awt.Color(255, 255, 255));
-        txtIdeologia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdeologiaActionPerformed(evt);
-            }
-        });
+        txtIdeologia.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
 
+        lblAfiliados.setBackground(new java.awt.Color(57, 72, 98));
         lblAfiliados.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         lblAfiliados.setForeground(new java.awt.Color(255, 255, 255));
         lblAfiliados.setText("Numero de afiliados");
 
         txtAfiliados.setBackground(new java.awt.Color(57, 72, 98));
-        txtAfiliados.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        txtAfiliados.setForeground(new java.awt.Color(255, 255, 255));
+        txtAfiliados.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         txtAfiliados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAfiliadosActionPerformed(evt);
             }
         });
 
+        lblDepartamento.setBackground(new java.awt.Color(57, 72, 98));
         lblDepartamento.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         lblDepartamento.setForeground(new java.awt.Color(255, 255, 255));
         lblDepartamento.setText("Departamento");
 
         txtDepartamento.setBackground(new java.awt.Color(57, 72, 98));
-        txtDepartamento.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
-        txtDepartamento.setForeground(new java.awt.Color(255, 255, 255));
-        txtDepartamento.addActionListener(new java.awt.event.ActionListener() {
+        txtDepartamento.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+
+        btnGuardar.setBackground(new java.awt.Color(81, 198, 186));
+        btnGuardar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDepartamentoActionPerformed(evt);
+                btnGuardarActionPerformed(evt);
             }
         });
 
-        btnGuardar.setBackground(new java.awt.Color(81, 198, 186));
-        btnGuardar.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        btnGuardar.setText("Guardar");
+        javax.swing.GroupLayout panelEdicionLayout = new javax.swing.GroupLayout(panelEdicion);
+        panelEdicion.setLayout(panelEdicionLayout);
+        panelEdicionLayout.setHorizontalGroup(
+            panelEdicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelEdicionLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(panelEdicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelEdicionLayout.createSequentialGroup()
+                        .addGroup(panelEdicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelEdicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lblNombreLider, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                                .addComponent(lblSigla, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                                .addComponent(lblNombrePartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtNombrePartido, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                                .addComponent(txtSigla, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                                .addComponent(txtNombreLider, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE))
+                            .addComponent(txtIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(45, Short.MAX_VALUE))
+                    .addGroup(panelEdicionLayout.createSequentialGroup()
+                        .addComponent(txtDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnGuardar)
+                        .addGap(20, 20, 20))))
+            .addGroup(panelEdicionLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(btnAtras)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelEdicionLayout.setVerticalGroup(
+            panelEdicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelEdicionLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(panelEdicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnGuardar)
+                    .addGroup(panelEdicionLayout.createSequentialGroup()
+                        .addComponent(btnAtras)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblNombrePartido, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNombrePartido, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblSigla, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSigla, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblNombreLider, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtNombreLider, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        panelDerecho.add(panelEdicion, "card2");
+
+        panelTabla.setBackground(new java.awt.Color(57, 72, 98));
+        panelTabla.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        panelTabla.setMaximumSize(new java.awt.Dimension(350, 450));
+        panelTabla.setMinimumSize(new java.awt.Dimension(350, 450));
+
+        btnAtrasTabla.setBackground(new java.awt.Color(81, 198, 186));
+        btnAtrasTabla.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnAtrasTabla.setForeground(new java.awt.Color(255, 255, 255));
+        btnAtrasTabla.setText("<");
+
+        jTable1.setBackground(new java.awt.Color(57, 72, 98));
+        jTable1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(255, 255, 255));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Identificador", "Nombre del partido"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jTable1.setGridColor(new java.awt.Color(51, 51, 51));
+        jTable1.setSelectionBackground(new java.awt.Color(81, 198, 186));
+        jTable1.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        scrollTable.setViewportView(jTable1);
+
+        lblCodigoIdentificador.setBackground(new java.awt.Color(57, 72, 98));
+        lblCodigoIdentificador.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        lblCodigoIdentificador.setForeground(new java.awt.Color(255, 255, 255));
+        lblCodigoIdentificador.setText("Codigo identificador");
+
+        txtCodigoIdentificador.setBackground(new java.awt.Color(57, 72, 98));
+        txtCodigoIdentificador.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+
+        btnValidar.setBackground(new java.awt.Color(81, 198, 186));
+        btnValidar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnValidar.setForeground(new java.awt.Color(255, 255, 255));
+        btnValidar.setText("Validar");
+        btnValidar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnValidarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelTablaLayout = new javax.swing.GroupLayout(panelTabla);
+        panelTabla.setLayout(panelTablaLayout);
+        panelTablaLayout.setHorizontalGroup(
+            panelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTablaLayout.createSequentialGroup()
+                .addGroup(panelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelTablaLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btnAtrasTabla))
+                    .addGroup(panelTablaLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(panelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCodigoIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(scrollTable, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelTablaLayout.createSequentialGroup()
+                                .addComponent(txtCodigoIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                                .addComponent(btnValidar)))))
+                .addGap(20, 20, 20))
+        );
+        panelTablaLayout.setVerticalGroup(
+            panelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTablaLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(panelTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnValidar)
+                    .addGroup(panelTablaLayout.createSequentialGroup()
+                        .addComponent(btnAtrasTabla)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(scrollTable, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblCodigoIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCodigoIdentificador, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+
+        panelDerecho.add(panelTabla, "card3");
+
+        jSplitPane1.setRightComponent(panelDerecho);
+
+        javax.swing.GroupLayout panelEdicionDeDatosLayout = new javax.swing.GroupLayout(panelEdicionDeDatos);
+        panelEdicionDeDatos.setLayout(panelEdicionDeDatosLayout);
+        panelEdicionDeDatosLayout.setHorizontalGroup(
+            panelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSplitPane1)
+        );
+        panelEdicionDeDatosLayout.setVerticalGroup(
+            panelEdicionDeDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSplitPane1)
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelEdicionDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAtras)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnGuardar)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtNombrePartido)
-                                .addComponent(txtSigla)
-                                .addComponent(txtNombreLider)
-                                .addComponent(lblIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtIdeologia)
-                                .addComponent(lblAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtAfiliados)
-                                .addComponent(lblDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtDepartamento)
-                                .addComponent(lblNombrePartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblSigla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblNombreLider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(37, 37, 37))))
+                .addComponent(panelEdicionDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelEdicionDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panelEdicionDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(btnAtras)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblNombrePartido)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNombrePartido, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(lblSigla)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtSigla, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(lblNombreLider)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNombreLider, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblIdeologia)
-                .addGap(12, 12, 12)
-                .addComponent(txtIdeologia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(lblAfiliados)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(lblDepartamento)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtDepartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnGuardar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnAtrasActionPerformed
-
-    private void txtNombrePartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePartidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombrePartidoActionPerformed
-
-    private void txtNombreLiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreLiderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreLiderActionPerformed
-
-    private void txtIdeologiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdeologiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdeologiaActionPerformed
 
     private void txtAfiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAfiliadosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAfiliadosActionPerformed
 
-    private void txtDepartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDepartamentoActionPerformed
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDepartamentoActionPerformed
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
+    private void btnValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnValidarActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JPanel jPanelEdicionDeDatos;
+    public javax.swing.JButton btnAtras;
+    public javax.swing.JButton btnAtrasTabla;
+    public javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnValidar;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSplitPane jSplitPane1;
+    public javax.swing.JTable jTable1;
     private javax.swing.JLabel lblAfiliados;
+    private javax.swing.JLabel lblCodigoIdentificador;
     private javax.swing.JLabel lblDepartamento;
-    private javax.swing.JLabel lblDescripcion1;
-    private javax.swing.JLabel lblDescripcion2;
     private javax.swing.JLabel lblIconEdit;
     private javax.swing.JLabel lblIdeologia;
     private javax.swing.JLabel lblNombreLider;
-    private javax.swing.JLabel lblNombrePartido;
+    public javax.swing.JLabel lblNombrePartido;
     private javax.swing.JLabel lblSigla;
+    private javax.swing.JLabel lblTexto1;
+    private javax.swing.JLabel lblTexto2;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTextField txtAfiliados;
-    private javax.swing.JTextField txtDepartamento;
-    private javax.swing.JTextField txtIdeologia;
-    private javax.swing.JTextField txtNombreLider;
-    private javax.swing.JTextField txtNombrePartido;
-    private javax.swing.JTextField txtSigla;
+    private javax.swing.JPanel panelDerecho;
+    private javax.swing.JPanel panelEdicion;
+    private javax.swing.JPanel panelEdicionDeDatos;
+    private javax.swing.JPanel panelIzquierdo;
+    private javax.swing.JPanel panelPresentacion;
+    private javax.swing.JPanel panelTabla;
+    private javax.swing.JScrollPane scrollTable;
+    public javax.swing.JTextField txtAfiliados;
+    public javax.swing.JTextField txtCodigoIdentificador;
+    public javax.swing.JTextField txtDepartamento;
+    public javax.swing.JTextField txtIdeologia;
+    public javax.swing.JTextField txtNombreLider;
+    public javax.swing.JTextField txtNombrePartido;
+    public javax.swing.JTextField txtSigla;
     // End of variables declaration//GEN-END:variables
 }

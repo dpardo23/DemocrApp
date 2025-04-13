@@ -8,11 +8,11 @@ Este procedimiento valida si los datos ingresados (nombre del partido, sigla o l
 - Usado en la clase ValidarDatos.java en el paquete com.mycompany.democrapp.model.
 
 ### Definicion de Procediminento:
-CREATE PROCEDURE VerificarDatosDuplicados(
-    @Nombre_partido VARCHAR(255),
-    @Sigla VARCHAR(255),
-    @Lider VARCHAR(255)
-)
+> CREATE PROCEDURE VerificarDatosDuplicados(
+    >> @Nombre_partido VARCHAR(255),
+    >> @Sigla VARCHAR(255),
+    >> @Lider VARCHAR(255)
+> )
 AS
 BEGIN
     IF EXISTS (

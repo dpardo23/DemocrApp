@@ -4,6 +4,7 @@
 Bienvenido a la documentación del proyecto de **Sistemas de Información II**. Este README contiene todo lo necesario para instalar, configurar y utilizar el proyecto.
 
 ---
+![image](https://github.com/user-attachments/assets/26fde24a-6562-4099-b887-602c5e764b60)
 
 ## **Requisitos Previos**
 Asegúrate de contar con los siguientes componentes antes de comenzar:
@@ -88,3 +89,4 @@ Asegúrate de contar con los siguientes componentes antes de comenzar:
 2. Clona este repositorio:
    ```bash
    git clone <repositorio-url>
+![image](https://github.com/user-attachments/assets/d0616421-9cc9-4ba7-b870-248dca789d29)

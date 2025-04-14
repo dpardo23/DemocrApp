@@ -694,33 +694,33 @@ public class ValidarDatos {
      * solicitados por el usuario.
      *
      * @param idPartido ID único del partido político a actualizar.
-     * @param nombrePartido Nuevo nombre del partido político.
-     * @param sigla Nueva sigla del partido político.
-     * @param nombreLider Nuevo nombre del líder del partido político.
-     * @param ideologia Nueva ideología del partido político.
-     * @param numAfiliados Nuevo número de afiliados del partido político.
-     * @param departamento Nuevo número de departamento asociado al partido
+     * @param nombrePartidoEdit Nuevo nombre del partido político.
+     * @param siglaEdit Nueva sigla del partido político.
+     * @param nombreLiderEdit Nuevo nombre del líder del partido político.
+     * @param ideologiaEdit Nueva ideología del partido político.
+     * @param numAfiliadosEdit Nuevo número de afiliados del partido político.
+     * @param departamentoEdit Nuevo número de departamento asociado al partido
      * político.
      */
     public static void actualizarPartido(
             int idPartido,
-            String nombrePartido,
-            String sigla,
-            String nombreLider,
-            String ideologia,
-            int numAfiliados,
-            int departamento
+            String nombrePartidoEdit,
+            String siglaEdit,
+            String nombreLiderEdit,
+            String ideologiaEdit,
+            int numAfiliadosEdit,
+            int departamentoEdit
     ) {
         try (Connection connection = ConexionSQL.getConnection()) {
             String query = "{CALL EditarPartido(?, ?, ?, ?, ?, ?, ?)}";
             CallableStatement cs = connection.prepareCall(query);
             cs.setInt(1, idPartido);
-            cs.setString(2, nombrePartido);
-            cs.setString(3, sigla);
-            cs.setString(4, nombreLider);
-            cs.setString(5, ideologia);
-            cs.setInt(6, numAfiliados);
-            cs.setInt(7, departamento);
+            cs.setString(2, nombrePartidoEdit);
+            cs.setString(3, siglaEdit);
+            cs.setString(4, nombreLiderEdit);
+            cs.setString(5, ideologiaEdit);
+            cs.setInt(6, numAfiliadosEdit);
+            cs.setInt(7, departamentoEdit);
             cs.executeUpdate();
             cs.close();
         } catch (SQLException e) {

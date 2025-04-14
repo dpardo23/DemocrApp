@@ -1,13 +1,10 @@
-C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\controller\CargaDeDatosController.java
-C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\controller\EdicionPartidoController.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\controller\GraficasController.java
-C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\controller\RegistroDePartidosController.java
+C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\controller\RegistroEdicionController.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\main\DemocrApp.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\model\ConexionSQL.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\model\InsercionDatos.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\model\ModeloGraficas.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\model\ValidarDatos.java
-C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\view\EdicionDeDatos.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\view\RegistroEdicionPartidos.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\view\VistaGraficas.java
 C:\Users\DIEGO\OneDrive\Documentos\NetBeansProjects\DemocrApp\src\main\java\com\mycompany\democrapp\view\visualizacionDetallada.java

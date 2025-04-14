@@ -1,5 +1,6 @@
 package com.mycompany.democrapp.model;
 
+import java.util.List;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +9,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -387,6 +389,47 @@ public class ValidarDatos {
                 JOptionPane.showMessageDialog(null, "❌ Error inesperado al verificar duplicados: " + e.getMessage());
                 return true; // Asumimos que ocurrió un problema, para evitar proceder
             }
+        }
+    }
+
+    public static ArrayList<String[]> obtenerPartidoPoliticos() {
+        ArrayList<String[]> partidos = new ArrayList<>();
+        try (Connection con = ConexionSQL.getConnection(); CallableStatement cs = con.prepareCall("{call GetPartidoPoliticos}"); ResultSet rs = cs.executeQuery()) {
+
+            while (rs.next()) {
+                String[] partido = {String.valueOf(rs.getInt("Id_Partido")), rs.getString("Nombre_partido")};
+                partidos.add(partido);
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al obtener partidos políticos: " + ex.getMessage());
+        }
+        return partidos;
+    }
+
+    // Método para actualizar datos en la base de datos
+    public static void actualizarPartido(
+            int idPartido,
+            String nombrePartido,
+            String sigla,
+            String nombreLider,
+            String ideologia,
+            int numAfiliados,
+            int departamento
+    ) {
+        try (Connection connection = ConexionSQL.getConnection()) {
+            String query = "{CALL EditarPartido(?, ?, ?, ?, ?, ?, ?)}";
+            CallableStatement cs = connection.prepareCall(query);
+            cs.setInt(1, idPartido);
+            cs.setString(2, nombrePartido);
+            cs.setString(3, sigla);
+            cs.setString(4, nombreLider);
+            cs.setString(5, ideologia);
+            cs.setInt(6, numAfiliados);
+            cs.setInt(7, departamento);
+            cs.executeUpdate();
+            cs.close();
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar los datos: " + e.getMessage());
         }
     }
 }

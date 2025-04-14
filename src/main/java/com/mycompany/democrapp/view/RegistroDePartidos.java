@@ -415,7 +415,7 @@ public class RegistroDePartidos extends javax.swing.JFrame {
     public javax.swing.JPanel panelDerecho;
     public javax.swing.JPanel panelIzquierdo;
     public javax.swing.JPanel panelRegistro;
-    private javax.swing.JPanel panelRegistroDeDatos;
+    public javax.swing.JPanel panelRegistroDeDatos;
     public javax.swing.JPanel panelRegistroVista;
     public javax.swing.JTextField txtDepartamento;
     public javax.swing.JTextField txtFechaFundacion;

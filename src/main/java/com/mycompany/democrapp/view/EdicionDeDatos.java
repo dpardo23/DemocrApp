@@ -486,7 +486,7 @@ public class EdicionDeDatos extends javax.swing.JFrame {
     public javax.swing.JPanel panelIzquierdo;
     private javax.swing.JPanel panelPresentacion;
     public javax.swing.JPanel panelTabla;
-    private javax.swing.JScrollPane scrollTable;
+    public javax.swing.JScrollPane scrollTable;
     public javax.swing.JTextField txtAfiliados;
     public javax.swing.JTextField txtCodigoIdentificador;
     public javax.swing.JTextField txtDepartamento;

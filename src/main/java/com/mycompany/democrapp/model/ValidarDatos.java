@@ -392,18 +392,26 @@ public class ValidarDatos {
         }
     }
 
-    public static ArrayList<String[]> obtenerPartidoPoliticos() {
-        ArrayList<String[]> partidos = new ArrayList<>();
-        try (Connection con = ConexionSQL.getConnection(); CallableStatement cs = con.prepareCall("{call GetPartidoPoliticos}"); ResultSet rs = cs.executeQuery()) {
+    public List<String[]> obtenerPartidosPoliticos() {
+        List<String[]> partidosPoliticos = new ArrayList<>();
+        try (Connection connection = ConexionSQL.getConnection()) { // Usar la conexión desde ConexionSQL
+            // Consulta usando el procedimiento almacenado
+            String query = "{CALL GetPartidoPoliticos}";
+            try (PreparedStatement statement = connection.prepareStatement(query); ResultSet resultSet = statement.executeQuery()) {
+                
+                // Procesar los resultados
+                while (resultSet.next()) {
+                    String idPartido = resultSet.getString("Id_Partido");
+                    String nombrePartido = resultSet.getString("Nombre_partido");
+                    partidosPoliticos.add(new String[]{idPartido, nombrePartido});
+                }
+                // Cerrar recursos
 
-            while (rs.next()) {
-                String[] partido = {String.valueOf(rs.getInt("Id_Partido")), rs.getString("Nombre_partido")};
-                partidos.add(partido);
             }
-        } catch (SQLException ex) {
-            System.err.println("Error al obtener partidos políticos: " + ex.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return partidos;
+        return partidosPoliticos;
     }
 
     // Método para actualizar datos en la base de datos

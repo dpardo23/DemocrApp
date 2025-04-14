@@ -15,11 +15,11 @@ public class RegistroDePartidosController {
 
     // Aquí se guarda una referencia al formulario que el usuario ve
     private final RegistroEdicionPartidos vista;
-
+    
     // Constructor que recibe el modelo y la vista
     public RegistroDePartidosController(ConexionSQL modelo, RegistroEdicionPartidos vista) {
         this.vista = vista;
-
+      
         // Acción para el botón "Guardar"
         this.vista.btnGuardarRegistro.addActionListener((ActionEvent e) -> {
             try (Connection connection = ConexionSQL.getConnection()) {
@@ -97,15 +97,39 @@ public class RegistroDePartidosController {
             }
         });
 
+        // Funciones para los botones "Atras"
         // Acción para el botón "Atras" de la pantalla registro de datos
         this.vista.btnAtrasRegistro.addActionListener((ActionEvent e) -> {
+            // Cambiar la visibilidad de los paneles
             vista.panelRegistroDeDatos.setVisible(false);
             vista.panelTablaEdicion.setVisible(false);
             vista.panelEdicionDeDatos.setVisible(false);
             vista.panelPrincipal.setVisible(true);
 
+            // Limpiar el contenido de los TextField
+            vista.txtIdentificador.setText("");
+            vista.txtDepartamento.setText("");
+            vista.txtNombrePartido.setText("");
+            vista.txtSigla.setText("");
+            vista.txtIdeologia.setText("");
+            vista.txtNumAfiliados.setText("");
+            vista.txtFechaFundacion.setText("");
+            vista.txtNombreLider.setText("");
         });
 
+        // Accion para el boton de  "Atras" de la tabla (edicion de datos).
+        this.vista.btnAtrasTabla.addActionListener((ActionEvent e) -> {
+            // Cambiar la visibilidad de los paneles
+            vista.panelRegistroDeDatos.setVisible(false);
+            vista.panelTablaEdicion.setVisible(false);
+            vista.panelEdicionDeDatos.setVisible(false);
+            vista.panelPrincipal.setVisible(true);
+
+            // Limpiar el contenido de los TextField
+            vista.txtIdentificadorTabla.setText("");
+        });
+
+        // Funciones para los botones de la pantalla principal
         // Accion para el boton de "Registro de datos" de la pantalla principal
         this.vista.btnRegistroDeDatos.addActionListener((ActionEvent e) -> {
             vista.panelTablaEdicion.setVisible(false);
@@ -116,23 +140,16 @@ public class RegistroDePartidosController {
 
         // Accion para el boton de  "Edicion de datos" de la pantalla principal
         this.vista.btnEdicionDeDatos.addActionListener((ActionEvent e) -> {
+            // Cambiar la visibilidad de los paneles
             vista.panelPrincipal.setVisible(false);
             vista.panelRegistroDeDatos.setVisible(false);
             vista.panelEdicionDeDatos.setVisible(false);
             vista.panelTablaEdicion.setVisible(true);
-
+            
+            // Cargar los Datos en la tabla
         });
-
-        // Accion para el boton de  "Atras" de la tabla (edicion de datos).
-        this.vista.btnAtrasTabla.addActionListener((ActionEvent e) -> {
-            vista.panelRegistroDeDatos.setVisible(false);
-            vista.panelTablaEdicion.setVisible(false);
-            vista.panelEdicionDeDatos.setVisible(false);
-            vista.panelPrincipal.setVisible(true);
-        });
-
     }
-
+    
     // Método para iniciar la interfaz gráfica
     public void iniciar() {
         // Mostrar directamente el JFrame si vista es un JFrame

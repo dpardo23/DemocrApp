@@ -5,7 +5,7 @@ package com.mycompany.democrapp.controller;
 import com.mycompany.democrapp.model.ConexionSQL;
 import com.mycompany.democrapp.model.InsercionDatos;
 import com.mycompany.democrapp.model.ValidarDatos;
-import com.mycompany.democrapp.view.RegistroDePartidos;
+import com.mycompany.democrapp.view.RegistroEdicionPartidos;
 import java.awt.event.ActionEvent;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -14,10 +14,10 @@ import javax.swing.JOptionPane;
 public class RegistroDePartidosController {
 
     // Aquí se guarda una referencia al formulario que el usuario ve
-    private final RegistroDePartidos vista;
+    private final RegistroEdicionPartidos vista;
 
     // Constructor que recibe el modelo y la vista
-    public RegistroDePartidosController(ConexionSQL modelo, RegistroDePartidos vista) {
+    public RegistroDePartidosController(ConexionSQL modelo, RegistroEdicionPartidos vista) {
         this.vista = vista;
 
         // Acción para el botón "Guardar"
@@ -58,7 +58,7 @@ public class RegistroDePartidosController {
                 if (!ValidarDatos.validarFecha(fechaFundacion)) {
                     return; // Detener si la fecha es inválida
                 }
-              
+
                 // Verificar duplicados
                 if (ValidarDatos.verificarDuplicados(nombrePartido, sigla, nombreLider, connection)) {
                     JOptionPane.showMessageDialog(null, "Error: Los datos ingresados ya existen. Por favor, verifica y corrige.");
@@ -97,15 +97,48 @@ public class RegistroDePartidosController {
             }
         });
 
-        // Acción para el botón "Atras"
+        // Acción para el botón "Atras" de la pantalla registro de datos
         this.vista.btnAtrasRegistro.addActionListener((ActionEvent e) -> {
+            vista.panelRegistroDeDatos.setVisible(false);
+            vista.panelTablaEdicion.setVisible(false);
+            vista.panelEdicionDeDatos.setVisible(false);
+            vista.panelPrincipal.setVisible(true);
 
         });
+
+        // Accion para el boton de "Registro de datos" de la pantalla principal
+        this.vista.btnRegistroDeDatos.addActionListener((ActionEvent e) -> {
+            vista.panelTablaEdicion.setVisible(false);
+            vista.panelPrincipal.setVisible(false);
+            vista.panelEdicionDeDatos.setVisible(false);
+            vista.panelRegistroDeDatos.setVisible(true);
+        });
+
+        // Accion para el boton de  "Edicion de datos" de la pantalla principal
+        this.vista.btnEdicionDeDatos.addActionListener((ActionEvent e) -> {
+            vista.panelPrincipal.setVisible(false);
+            vista.panelRegistroDeDatos.setVisible(false);
+            vista.panelEdicionDeDatos.setVisible(false);
+            vista.panelTablaEdicion.setVisible(true);
+
+        });
+
+        // Accion para el boton de  "Atras" de la tabla (edicion de datos).
+        this.vista.btnAtrasTabla.addActionListener((ActionEvent e) -> {
+            vista.panelRegistroDeDatos.setVisible(false);
+            vista.panelTablaEdicion.setVisible(false);
+            vista.panelEdicionDeDatos.setVisible(false);
+            vista.panelPrincipal.setVisible(true);
+        });
+
     }
 
     // Método para iniciar la interfaz gráfica
     public void iniciar() {
         // Mostrar directamente el JFrame si vista es un JFrame
         vista.setVisible(true);
+        vista.panelTablaEdicion.setVisible(false);
+        vista.panelEdicionDeDatos.setVisible(false);
+        vista.panelPrincipal.setVisible(false);
     }
 }

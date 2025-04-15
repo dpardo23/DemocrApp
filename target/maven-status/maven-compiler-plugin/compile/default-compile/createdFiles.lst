@@ -1,12 +1,16 @@
+com\mycompany\democrapp\view\RegistroEdicionPartidos$14.class
 com\mycompany\democrapp\view\visualizacionDetallada$7.class
 com\mycompany\democrapp\view\RegistroEdicionPartidos$4.class
 com\mycompany\democrapp\view\VistaGraficas$1.class
 com\mycompany\democrapp\view\RegistroEdicionPartidos$6.class
 com\mycompany\democrapp\view\RegistroEdicionPartidos$9.class
 com\mycompany\democrapp\view\visualizacionDetallada$5.class
+com\mycompany\democrapp\controller\RegistroEdicionController$datos.class
 com\mycompany\democrapp\model\ValidarDatos.class
 com\mycompany\democrapp\view\RegistroEdicionPartidos$1.class
 com\mycompany\democrapp\view\RegistroEdicionPartidos$8.class
+com\mycompany\democrapp\view\RegistroEdicionPartidos$11.class
+com\mycompany\democrapp\view\RegistroEdicionPartidos$13.class
 com\mycompany\democrapp\view\visualizacionDetallada$8.class
 com\mycompany\democrapp\model\ModeloGraficas$prueba.class
 com\mycompany\democrapp\view\VistaGraficas$2.class
@@ -15,8 +19,10 @@ com\mycompany\democrapp\controller\RegistroEdicionController.class
 com\mycompany\democrapp\view\visualizacionDetallada$3.class
 com\mycompany\democrapp\view\RegistroEdicionPartidos$3.class
 com\mycompany\democrapp\view\visualizacionDetallada.class
+com\mycompany\democrapp\view\RegistroEdicionPartidos$15.class
 com\mycompany\democrapp\view\visualizacionDetallada$6.class
 com\mycompany\democrapp\view\RegistroEdicionPartidos.class
+com\mycompany\democrapp\view\RegistroEdicionPartidos$10.class
 com\mycompany\democrapp\model\ConexionSQL.class
 com\mycompany\democrapp\model\InsercionDatos.class
 com\mycompany\democrapp\view\visualizacionDetallada$1.class
@@ -28,4 +34,5 @@ com\mycompany\democrapp\view\RegistroEdicionPartidos$2.class
 com\mycompany\democrapp\view\visualizacionDetallada$4.class
 com\mycompany\democrapp\view\visualizacionDetallada$2.class
 com\mycompany\democrapp\view\VistaGraficas.class
+com\mycompany\democrapp\view\RegistroEdicionPartidos$12.class
 com\mycompany\democrapp\main\DemocrApp.class

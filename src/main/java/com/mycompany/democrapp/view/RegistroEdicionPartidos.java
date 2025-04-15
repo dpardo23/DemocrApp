@@ -4,6 +4,8 @@
  */
 package com.mycompany.democrapp.view;
 
+import javax.swing.table.TableModel;
+
 /**
  *
  * @author DIEGO
@@ -18,6 +20,8 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
         this.setLocationRelativeTo(null); // Centra la ventana
     }
 
+    public String partido="";
+    public String Departamento="";
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,7 +64,7 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
         panelPrincipal = new javax.swing.JPanel();
         btnRegistroDeDatos = new javax.swing.JButton();
         btnEdicionDeDatos = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnGraficas = new javax.swing.JButton();
         pilar1 = new javax.swing.JPanel();
         pilar2 = new javax.swing.JPanel();
         panelEdicionDeDatos = new javax.swing.JPanel();
@@ -105,6 +109,19 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
         tablaIdentificador = new javax.swing.JTable();
         lblIdentificadorTabla = new javax.swing.JLabel();
         txtIdentificadorTabla = new javax.swing.JTextField();
+        panelgraficas = new javax.swing.JPanel();
+        panelgraficasvista = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        lblTitulo1 = new javax.swing.JLabel();
+        lblDescripcion1 = new javax.swing.JLabel();
+        lblDescripcion2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaPartido = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaDepartamento = new javax.swing.JTable();
+        lblDescripcion3 = new javax.swing.JLabel();
+        btnvergraficas = new javax.swing.JButton();
+        panelvistagrafica = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(700, 450));
@@ -189,7 +206,7 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
                 .addComponent(lblTexto3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(lblIconRegistro)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         panelIzquierdo.add(panelRegistroVista, "card2");
@@ -390,7 +407,7 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
                 .addComponent(lblNombreLider, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNombreLider, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         panelDerecho.add(panelRegistro, "card2");
@@ -427,11 +444,16 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
         btnEdicionDeDatos.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         btnEdicionDeDatos.setForeground(new java.awt.Color(255, 255, 255));
         btnEdicionDeDatos.setText("EDICION DE DATOS");
+        btnEdicionDeDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEdicionDeDatosActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(57, 72, 98));
-        jButton3.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("GRAFICAS ");
+        btnGraficas.setBackground(new java.awt.Color(57, 72, 98));
+        btnGraficas.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        btnGraficas.setForeground(new java.awt.Color(255, 255, 255));
+        btnGraficas.setText("GRAFICAS ");
 
         pilar1.setBackground(new java.awt.Color(57, 72, 98));
         pilar1.setMaximumSize(new java.awt.Dimension(180, 450));
@@ -475,7 +497,7 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEdicionDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistroDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnGraficas, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(pilar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -487,7 +509,7 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(btnEdicionDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGraficas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(122, Short.MAX_VALUE))
             .addComponent(pilar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pilar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -931,6 +953,188 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
             .addComponent(jSplitPane3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        panelgraficas.setMaximumSize(new java.awt.Dimension(700, 450));
+        panelgraficas.setMinimumSize(new java.awt.Dimension(700, 450));
+        panelgraficas.setPreferredSize(new java.awt.Dimension(700, 450));
+
+        panelgraficasvista.setBackground(new java.awt.Color(57, 72, 98));
+
+        jPanel3.setBackground(new java.awt.Color(81, 198, 186));
+
+        lblTitulo1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        lblTitulo1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo1.setText("Graficas de Popularidad");
+
+        lblDescripcion1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        lblDescripcion1.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescripcion1.setText("En este apartado se pueden apreciar las graficas");
+
+        lblDescripcion2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        lblDescripcion2.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescripcion2.setText("de popularidad de cada partido en cada ciudad del");
+
+        tablaPartido.setBackground(new java.awt.Color(81, 198, 186));
+        tablaPartido.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        tablaPartido.setForeground(new java.awt.Color(255, 255, 255));
+        tablaPartido.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Partido"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tablaPartido.setGridColor(new java.awt.Color(81, 198, 186));
+        tablaPartido.setSelectionBackground(new java.awt.Color(81, 198, 186));
+        tablaPartido.setSelectionForeground(new java.awt.Color(255, 0, 51));
+        tablaPartido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaPartidoMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tablaPartido);
+
+        tablaDepartamento.setBackground(new java.awt.Color(81, 198, 186));
+        tablaDepartamento.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        tablaDepartamento.setForeground(new java.awt.Color(255, 255, 255));
+        tablaDepartamento.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Ciudad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tablaDepartamento.setGridColor(new java.awt.Color(81, 198, 186));
+        tablaDepartamento.setSelectionBackground(new java.awt.Color(81, 198, 186));
+        tablaDepartamento.setSelectionForeground(new java.awt.Color(255, 51, 51));
+        tablaDepartamento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaDepartamentoMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tablaDepartamento);
+
+        lblDescripcion3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        lblDescripcion3.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescripcion3.setText("pais y sus respectivas provincias.");
+
+        btnvergraficas.setBackground(new java.awt.Color(81, 198, 186));
+        btnvergraficas.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnvergraficas.setForeground(new java.awt.Color(255, 255, 255));
+        btnvergraficas.setText("Ver Graficas");
+        btnvergraficas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvergraficasActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnvergraficas)
+                    .addComponent(lblTitulo1)
+                    .addComponent(lblDescripcion3)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lblDescripcion2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblDescripcion1)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lblTitulo1)
+                .addGap(18, 18, 18)
+                .addComponent(lblDescripcion1)
+                .addGap(15, 15, 15)
+                .addComponent(lblDescripcion2)
+                .addGap(15, 15, 15)
+                .addComponent(lblDescripcion3)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnvergraficas)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        panelvistagrafica.setBackground(new java.awt.Color(57, 72, 98));
+
+        javax.swing.GroupLayout panelvistagraficaLayout = new javax.swing.GroupLayout(panelvistagrafica);
+        panelvistagrafica.setLayout(panelvistagraficaLayout);
+        panelvistagraficaLayout.setHorizontalGroup(
+            panelvistagraficaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+        );
+        panelvistagraficaLayout.setVerticalGroup(
+            panelvistagraficaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 384, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout panelgraficasvistaLayout = new javax.swing.GroupLayout(panelgraficasvista);
+        panelgraficasvista.setLayout(panelgraficasvistaLayout);
+        panelgraficasvistaLayout.setHorizontalGroup(
+            panelgraficasvistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelgraficasvistaLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(panelvistagrafica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 25, Short.MAX_VALUE))
+        );
+        panelgraficasvistaLayout.setVerticalGroup(
+            panelgraficasvistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelgraficasvistaLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(panelvistagrafica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout panelgraficasLayout = new javax.swing.GroupLayout(panelgraficas);
+        panelgraficas.setLayout(panelgraficasLayout);
+        panelgraficasLayout.setHorizontalGroup(
+            panelgraficasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(panelgraficasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelgraficasvista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelgraficasLayout.setVerticalGroup(
+            panelgraficasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 450, Short.MAX_VALUE)
+            .addGroup(panelgraficasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(panelgraficasvista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -951,6 +1155,11 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(panelTablaEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(panelgraficas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -969,6 +1178,11 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(panelTablaEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(panelgraficas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -1007,17 +1221,70 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSiglaEditActionPerformed
 
+    private void btnEdicionDeDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdicionDeDatosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEdicionDeDatosActionPerformed
+
+    private void tablaPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaPartidoMouseClicked
+        // TODO add your handling code here:
+        int index=tablaPartido.getSelectedRow();
+        TableModel modelo=tablaPartido.getModel();
+        partido=modelo.getValueAt(index, 0).toString();
+    }//GEN-LAST:event_tablaPartidoMouseClicked
+
+    private void tablaDepartamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaDepartamentoMouseClicked
+        // TODO add your handling code here:
+        int index=tablaDepartamento.getSelectedRow();
+        TableModel modelo=tablaDepartamento.getModel();
+        Departamento=modelo.getValueAt(index, 0).toString();
+    }//GEN-LAST:event_tablaDepartamentoMouseClicked
+
+    private void btnvergraficasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvergraficasActionPerformed
+        // TODO add your handling code here:
+        /*if(partido==""){
+            JOptionPane.showMessageDialog(null, "Seleccione el partido del cual desea ver las graficas");
+        }else{
+            if(Departamento==""){
+                JOptionPane.showMessageDialog(null, "Seleccione el departamento del cual desea ver las graficas");
+            }else{
+                ArrayList<datos> grafica = new ArrayList<>();
+                grafica=Obtenervalores(partido,Departamento);
+                if(grafica.isEmpty()){
+                    JOptionPane.showMessageDialog(null, "En este momento aun no existen datos de popularidad del partido del partido");
+                }else{
+                    DefaultPieDataset datosgrafica=new DefaultPieDataset();
+                    for(datos a:grafica){
+                        datosgrafica.setValue(a.getProvincia(),a.getPopularidad());
+                    }
+                    JFreeChart grafico_circular=ChartFactory.createPieChart("Popularidad por Provincia", datosgrafica,false,true,false);
+                    ChartPanel panel=new ChartPanel(grafico_circular);
+                    panel.setMouseWheelEnabled(true);
+                    panel.setPreferredSize(new Dimension(380,450));
+                    jPanel4.setLayout(new BorderLayout());
+                    jPanel4.add(panel,BorderLayout.NORTH);
+                    pack();
+                    repaint();
+                }
+            }
+        }*/
+
+    }//GEN-LAST:event_btnvergraficasActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAtrasEdit;
     public javax.swing.JButton btnAtrasRegistro;
     public javax.swing.JButton btnAtrasTabla;
     public javax.swing.JButton btnEdicionDeDatos;
+    public javax.swing.JButton btnGraficas;
     public javax.swing.JButton btnGuardarEdit;
     public javax.swing.JButton btnGuardarRegistro;
     public javax.swing.JButton btnRegistroDeDatos;
     public javax.swing.JButton btnValidarTabla;
-    public javax.swing.JButton jButton3;
+    public javax.swing.JButton btnvergraficas;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JSeparator jSeparator2;
     public javax.swing.JSeparator jSeparator3;
@@ -1026,6 +1293,9 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
     private javax.swing.JSplitPane jSplitPane3;
     public javax.swing.JLabel lblDepartamento;
     public javax.swing.JLabel lblDepartamentoEdit;
+    private javax.swing.JLabel lblDescripcion1;
+    private javax.swing.JLabel lblDescripcion2;
+    private javax.swing.JLabel lblDescripcion3;
     public javax.swing.JLabel lblFechaFundacion;
     private javax.swing.JLabel lblIconRegistro;
     public javax.swing.JLabel lblIconTabla;
@@ -1049,6 +1319,7 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
     public javax.swing.JLabel lblTextoT1;
     public javax.swing.JLabel lblTextoT2;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTitulo1;
     public javax.swing.JLabel lblTituloEdicion;
     public javax.swing.JLabel lblTituloTabla;
     public javax.swing.JPanel panelDerecho;
@@ -1068,10 +1339,15 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
     public javax.swing.JPanel panelTablaEdicion;
     public javax.swing.JPanel panelTablaVista;
     public javax.swing.JLabel panelTextoEdicion3;
+    public javax.swing.JPanel panelgraficas;
+    private javax.swing.JPanel panelgraficasvista;
+    public javax.swing.JPanel panelvistagrafica;
     private javax.swing.JPanel pilar1;
     private javax.swing.JPanel pilar2;
     public javax.swing.JScrollPane scrollTabla;
+    public javax.swing.JTable tablaDepartamento;
     public javax.swing.JTable tablaIdentificador;
+    public javax.swing.JTable tablaPartido;
     public javax.swing.JTextField txtDepartamento;
     public javax.swing.JTextField txtDepartamentoEdit;
     public javax.swing.JTextField txtFechaFundacion;

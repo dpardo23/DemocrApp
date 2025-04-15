@@ -14,6 +14,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,9 +31,11 @@ public class RegistroEdicionController {
     private final RegistroEdicionPartidos vista;
     private final ValidarDatos validacion;
     private String idComparar;
+    private int vpopularidad=0;
     
     private DefaultTableModel dtmp=new DefaultTableModel();
     private DefaultTableModel dtmd=new DefaultTableModel();
+    private DefaultTableModel dtmpr=new DefaultTableModel();
     //private String partido="";
     //private String Departamento="";
 
@@ -141,6 +144,7 @@ public class RegistroEdicionController {
             vista.panelTablaEdicion.setVisible(false);
             vista.panelEdicionDeDatos.setVisible(false);
             vista.panelgraficas.setVisible(false);
+            vista.panelpopularidad.setVisible(false);
 
             // Mostrar el panel principal
             vista.panelPrincipal.setVisible(true);
@@ -168,6 +172,7 @@ public class RegistroEdicionController {
             vista.panelTablaEdicion.setVisible(false);
             vista.panelEdicionDeDatos.setVisible(false);
             vista.panelgraficas.setVisible(false);
+            vista.panelpopularidad.setVisible(false);
 
             // Mostrar el panel principal
             vista.panelPrincipal.setVisible(true);
@@ -176,6 +181,23 @@ public class RegistroEdicionController {
             vista.txtIdentificadorTabla.setText("");
         });
 
+        
+        this.vista.btnpopularidad.addActionListener((ActionEvent e) -> {
+            // Ocultar los demas paneles
+            vista.panelRegistroDeDatos.setVisible(false);
+            vista.panelTablaEdicion.setVisible(false);
+            vista.panelEdicionDeDatos.setVisible(false);
+            vista.panelgraficas.setVisible(false);
+            vista.panelpopularidad.setVisible(true);
+
+            // Mostrar el panel principal
+            vista.panelPrincipal.setVisible(false);
+            
+            llenadop();
+
+            // Limpiar el campo de identificacion en la edicion de datos
+            //vista.txtIdentificadorTabla.setText("");
+        });
         /**
          * Accion para el boton "Validar" en la pantalla de edicion de datos.
          * Cuando se acciona, toma el valor ingresado en el TextField y lo
@@ -201,6 +223,7 @@ public class RegistroEdicionController {
                     vista.panelTablaEdicion.setVisible(false);
                     vista.panelRegistroDeDatos.setVisible(false);
                     vista.panelgraficas.setVisible(false);
+                    vista.panelpopularidad.setVisible(false);
 
                     // Mostrar el panel de edicion de datos
                     vista.panelEdicionDeDatos.setVisible(true);
@@ -223,6 +246,7 @@ public class RegistroEdicionController {
             vista.panelPrincipal.setVisible(false);
             vista.panelEdicionDeDatos.setVisible(false);
             vista.panelgraficas.setVisible(false);
+            vista.panelpopularidad.setVisible(false);
 
             // Mostrar el panel de registro de datos
             vista.panelRegistroDeDatos.setVisible(true);
@@ -265,11 +289,28 @@ public class RegistroEdicionController {
             vista.panelTablaEdicion.setVisible(false);
             vista.panelPrincipal.setVisible(false);
             vista.panelEdicionDeDatos.setVisible(false);
+            vista.panelpopularidad.setVisible(false);
 
             // Mostrar el panel de registro de datos
             vista.panelRegistroDeDatos.setVisible(false);
             vista.panelgraficas.setVisible(true);
             llenado();
+        });
+        
+        
+        this.vista.btnAtraspopularidad.addActionListener((ActionEvent e) -> {
+            // Ocultar los demas paneles
+            vista.panelTablaEdicion.setVisible(false);
+            vista.panelPrincipal.setVisible(true);
+            vista.panelEdicionDeDatos.setVisible(false);
+            vista.panelpopularidad.setVisible(false);
+
+            // Mostrar el panel de registro de datos
+            vista.panelRegistroDeDatos.setVisible(false);
+            vista.panelgraficas.setVisible(false);
+            vista.partido="";
+            vista.Departamento="";
+            vista.provincia="";
         });
         /**
          * Acción para el botón "Edición de datos" en la pantalla principal.
@@ -287,6 +328,7 @@ public class RegistroEdicionController {
             vista.panelRegistroDeDatos.setVisible(false);
             vista.panelEdicionDeDatos.setVisible(false);
             vista.panelgraficas.setVisible(false);
+            vista.panelpopularidad.setVisible(false);
 
             // Mostrar el panel que contiene la tabla
             vista.panelTablaEdicion.setVisible(true);
@@ -318,6 +360,7 @@ public class RegistroEdicionController {
             vista.panelPrincipal.setVisible(false);
             vista.panelEdicionDeDatos.setVisible(false);
             vista.panelgraficas.setVisible(false);
+            vista.panelpopularidad.setVisible(false);
 
             // Mostrar el panel de registro de datos
             vista.panelTablaEdicion.setVisible(true);
@@ -331,6 +374,37 @@ public class RegistroEdicionController {
             vista.txtDepartamentoEdit.setText("");
         });
 
+        this.vista.btnatrasgraficas.addActionListener((ActionEvent e) -> {
+            // Ocultar los demas paneles
+            vista.panelRegistroDeDatos.setVisible(false);
+            vista.panelPrincipal.setVisible(true);
+            vista.panelEdicionDeDatos.setVisible(false);
+            vista.panelgraficas.setVisible(false);
+            vista.panelpopularidad.setVisible(false);
+
+            // Mostrar el panel de registro de datos
+            vista.panelTablaEdicion.setVisible(false);
+
+            // Limpiar los campos de texto del formulario de edicion
+            vista.partido="";
+            vista.Departamento="";
+            vista.provincia="";
+        });
+        
+        
+        this.vista.btnInsertarpopularidad.addActionListener((ActionEvent e) -> {
+            // Ocultar los demas paneles
+            vpopularidad=Integer.parseInt(vista.popularidad.getText());
+        if(vista.partido==""){
+            JOptionPane.showMessageDialog(null, "Seleccione el partido del cual desea ver las graficas");
+        }else{
+            if(vista.provincia==""){
+                JOptionPane.showMessageDialog(null, "Seleccione la provincia del cual desea ver las graficas");
+            }else{
+                insertarDatos(vista.partido,vista.Departamento,vista.provincia,vpopularidad);
+            }
+        }
+        });
         /**
          * Acción para el botón "Guardar" en la pantalla edicion de datos.
          * Cuando se presiona, oculta otros paneles y muestra el panel donde se
@@ -414,6 +488,7 @@ public class RegistroEdicionController {
         vista.panelEdicionDeDatos.setVisible(false);
         vista.panelPrincipal.setVisible(false);
         vista.panelgraficas.setVisible(false);
+        vista.panelpopularidad.setVisible(false);
     }
     
     public ArrayList<String> MostrarDepartamentos() {
@@ -576,5 +651,120 @@ public class RegistroEdicionController {
         llenartablapartido();
         llenartabladepartamento();
     }
+    
+    public void llenadop(){
+        String[] titulop=new String[]{"Partido"};
+        dtmp.setColumnIdentifiers(titulop);
+        vista.tablaPartido1.setModel(dtmp);
+        String[] titulod=new String[]{"Departamento"};
+        dtmd.setColumnIdentifiers(titulod);
+        vista.tablaDepartamento1.setModel(dtmd);
+        llenartablapartido();
+        llenartabladepartamento();
+    }
+    
+    
+    public void insertarDatos(String partido,String departamento,String provincia,int popularidad) {
+        //boolean alerta;
+        Connection con = null;
+        CallableStatement cs = null;
+        ResultSet rs = null;
+
+        try {
+            // Obtener la conexión a la base de datos
+            con = ConexionSQL.getConnection();
+            // Preparar la llamada al procedimiento almacenado.
+            cs = con.prepareCall("{call InsertarPopularidad(?, ?, ?, ?, ?)}");
+
+            cs.setString(1, partido);      // nombrePartido
+            cs.setString(2, departamento);                // nombreDepartamento
+            cs.setString(3, provincia);               // nombreProvincia
+            cs.setInt(4, popularidad); 
+            // Ejecutar el procedimiento almacenado
+            
+            cs.registerOutParameter(5, Types.BIT);
+            
+            //rs = cs.execute();
+            cs.execute();
+
+            boolean creado = cs.getBoolean(5);
+            if (creado) {
+                JOptionPane.showMessageDialog(null, "✅ Registro creado correctamente.");
+                //System.out.println("✅ Registro creado correctamente.");
+            } else {
+                JOptionPane.showMessageDialog(null, "⚠️ El registro ya existía. No se insertó.");
+                //System.out.println("⚠️ El registro ya existía. No se insertó.");
+            }
+            // Si se retorna un registro, las credenciales son válidas
+            //alerta= cs.getBoolean(5);
+            //System.out.println("Mensaje del procedimiento se hizo correctamente ");
+        } catch (SQLException ex) {
+            System.err.println("Error al validar usuario: " + ex.getMessage());
+        } finally {
+            // Cerrar recursos en un bloque finally para evitar fugas de recursos
+            try {
+                if(rs != null) rs.close();
+                if(cs != null) cs.close();
+                if(con != null) con.close();
+            } catch (SQLException ex) {
+                System.err.println("Error al cerrar recursos: " + ex.getMessage());
+            }
+        }
+    }
+    
+    /*public void llenadoprovincia(){
+        //DefaultTableModel dtmpr=new DefaultTableModel();
+        String[] titulopr=new String[]{"Provincias"};
+        dtmpr.setColumnIdentifiers(titulopr);
+        vista.tablaprovincia.setModel(dtmpr);
+        //llenartablaprovincias(vista.Departamento);
+    }*/
+    /*public void llenartablaprovincias(String provincia){
+        DefaultTableModel dtmpr=new DefaultTableModel();
+        vista.tablaprovincia.setModel(dtmpr);
+        ArrayList<String> provincias = new ArrayList<>();
+        provincias=MostrarProvincias(provincia);
+        for(String dato:provincias){
+            dtmpr.addRow(new Object[]{
+                dato.toString()
+            });
+        }
+    }*/
+    
+    /*public ArrayList<String> MostrarProvincias(String provincia) {
+        ArrayList<String> Provincia = new ArrayList<>();
+        Connection con = null;
+        CallableStatement cs = null;
+        ResultSet rs = null;
+
+        try {
+            // Obtener la conexión a la base de datos
+            con = ConexionSQL.getConnection();
+            // Preparar la llamada al procedimiento almacenado.
+            cs = con.prepareCall("{call dbo.ObtenerProvincias(?)}");
+
+            cs.setString(1, provincia);
+            // Ejecutar el procedimiento almacenado
+            rs = cs.executeQuery();
+
+            // Si se retorna un registro, las credenciales son válidas
+            while(rs.next()){
+                Provincia.add(rs.getString("Provincia"));
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al validar usuario: " + ex.getMessage());
+        } finally {
+            // Cerrar recursos en un bloque finally para evitar fugas de recursos
+            try {
+                if(rs != null) rs.close();
+                if(cs != null) cs.close();
+                if(con != null) con.close();
+            } catch (SQLException ex) {
+                System.err.println("Error al cerrar recursos: " + ex.getMessage());
+            }
+        }
+        return Provincia;
+    }*/
+    
     
 }

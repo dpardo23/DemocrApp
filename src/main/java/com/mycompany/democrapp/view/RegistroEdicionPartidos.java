@@ -4,7 +4,15 @@
  */
 package com.mycompany.democrapp.view;
 
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import com.mycompany.democrapp.controller.RegistroEdicionController;
+import com.mycompany.democrapp.model.ConexionSQL;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -22,6 +30,43 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
 
     public String partido="";
     public String Departamento="";
+    public String provincia="";
+    
+    
+    public ArrayList<String> MostrarProvincia(String provincia) {
+        ArrayList<String> Provincia = new ArrayList<>();
+        Connection con = null;
+        CallableStatement cs = null;
+        ResultSet rs = null;
+
+        try {
+            // Obtener la conexión a la base de datos
+            con = ConexionSQL.getConnection();
+            // Preparar la llamada al procedimiento almacenado.
+            cs = con.prepareCall("{call dbo.ObtenerProvincias(?)}");
+
+            cs.setString(1, provincia);
+            // Ejecutar el procedimiento almacenado
+            rs = cs.executeQuery();
+
+            // Si se retorna un registro, las credenciales son válidas
+            while(rs.next()){
+                Provincia.add(rs.getString("Provincia"));
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al validar usuario: " + ex.getMessage());
+        } finally {
+            // Cerrar recursos en un bloque finally para evitar fugas de recursos
+            try {
+                if(rs != null) rs.close();
+                if(cs != null) cs.close();
+                if(con != null) con.close();
+            } catch (SQLException ex) {
+                System.err.println("Error al cerrar recursos: " + ex.getMessage());
+            }
+        }
+        return Provincia;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,6 +112,7 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
         btnGraficas = new javax.swing.JButton();
         pilar1 = new javax.swing.JPanel();
         pilar2 = new javax.swing.JPanel();
+        btnpopularidad = new javax.swing.JButton();
         panelEdicionDeDatos = new javax.swing.JPanel();
         jSplitPane2 = new javax.swing.JSplitPane();
         panelIzquierdoE = new javax.swing.JPanel();
@@ -122,6 +168,24 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
         lblDescripcion3 = new javax.swing.JLabel();
         btnvergraficas = new javax.swing.JButton();
         panelvistagrafica = new javax.swing.JPanel();
+        btnatrasgraficas = new javax.swing.JButton();
+        panelpopularidad = new javax.swing.JPanel();
+        panelpopularidadvista = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        lblTitulo2 = new javax.swing.JLabel();
+        lblDescripcion4 = new javax.swing.JLabel();
+        lblDescripcion5 = new javax.swing.JLabel();
+        lblDescripcion6 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaPartido1 = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tablaDepartamento1 = new javax.swing.JTable();
+        btnAtraspopularidad = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tablaprovincia = new javax.swing.JTable();
+        popularidad = new javax.swing.JTextField();
+        btnInsertarpopularidad = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(700, 450));
@@ -454,6 +518,11 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
         btnGraficas.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         btnGraficas.setForeground(new java.awt.Color(255, 255, 255));
         btnGraficas.setText("GRAFICAS ");
+        btnGraficas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGraficasActionPerformed(evt);
+            }
+        });
 
         pilar1.setBackground(new java.awt.Color(57, 72, 98));
         pilar1.setMaximumSize(new java.awt.Dimension(180, 450));
@@ -487,6 +556,19 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        btnpopularidad.setBackground(new java.awt.Color(57, 72, 98));
+        btnpopularidad.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        btnpopularidad.setForeground(new java.awt.Color(255, 255, 255));
+        btnpopularidad.setText("POPULARIDAD");
+        btnpopularidad.setMaximumSize(new java.awt.Dimension(117, 25));
+        btnpopularidad.setMinimumSize(new java.awt.Dimension(117, 25));
+        btnpopularidad.setPreferredSize(new java.awt.Dimension(117, 25));
+        btnpopularidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnpopularidadActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
@@ -494,23 +576,26 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
             .addGroup(panelPrincipalLayout.createSequentialGroup()
                 .addComponent(pilar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEdicionDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegistroDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGraficas, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnEdicionDeDatos, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                    .addComponent(btnRegistroDeDatos, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                    .addComponent(btnGraficas, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                    .addComponent(btnpopularidad, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(pilar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPrincipalLayout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addGap(89, 89, 89)
                 .addComponent(btnRegistroDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
                 .addComponent(btnEdicionDeDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
                 .addComponent(btnGraficas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addComponent(btnpopularidad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(89, Short.MAX_VALUE))
             .addComponent(pilar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pilar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -1101,21 +1186,37 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
             .addGap(0, 384, Short.MAX_VALUE)
         );
 
+        btnatrasgraficas.setBackground(new java.awt.Color(81, 198, 186));
+        btnatrasgraficas.setForeground(new java.awt.Color(255, 255, 255));
+        btnatrasgraficas.setText("<");
+        btnatrasgraficas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnatrasgraficasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelgraficasvistaLayout = new javax.swing.GroupLayout(panelgraficasvista);
         panelgraficasvista.setLayout(panelgraficasvistaLayout);
         panelgraficasvistaLayout.setHorizontalGroup(
             panelgraficasvistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelgraficasvistaLayout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addComponent(panelvistagrafica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelgraficasvistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelgraficasvistaLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(panelvistagrafica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelgraficasvistaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnatrasgraficas)))
                 .addGap(0, 25, Short.MAX_VALUE))
         );
         panelgraficasvistaLayout.setVerticalGroup(
             panelgraficasvistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(panelgraficasvistaLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
+                .addComponent(btnatrasgraficas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelvistagrafica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1133,6 +1234,233 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
             .addGap(0, 450, Short.MAX_VALUE)
             .addGroup(panelgraficasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(panelgraficasvista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panelpopularidad.setPreferredSize(new java.awt.Dimension(700, 450));
+
+        panelpopularidadvista.setBackground(new java.awt.Color(57, 72, 98));
+
+        jPanel1.setBackground(new java.awt.Color(81, 198, 186));
+
+        lblTitulo2.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        lblTitulo2.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo2.setText("Insertar Datos Popularidad");
+
+        lblDescripcion4.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        lblDescripcion4.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescripcion4.setText("En este apartado se va a ingresar datos de popularidad");
+
+        lblDescripcion5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        lblDescripcion5.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescripcion5.setText("para que estos sean visibles en las graficas, ");
+
+        lblDescripcion6.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        lblDescripcion6.setForeground(new java.awt.Color(255, 255, 255));
+        lblDescripcion6.setText("diferenciados por el partido, departamento y provincia.");
+
+        tablaPartido1.setBackground(new java.awt.Color(81, 198, 186));
+        tablaPartido1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        tablaPartido1.setForeground(new java.awt.Color(255, 255, 255));
+        tablaPartido1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Partido"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tablaPartido1.setGridColor(new java.awt.Color(81, 198, 186));
+        tablaPartido1.setSelectionBackground(new java.awt.Color(81, 198, 186));
+        tablaPartido1.setSelectionForeground(new java.awt.Color(255, 0, 51));
+        tablaPartido1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaPartido1MouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tablaPartido1);
+
+        tablaDepartamento1.setBackground(new java.awt.Color(81, 198, 186));
+        tablaDepartamento1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        tablaDepartamento1.setForeground(new java.awt.Color(255, 255, 255));
+        tablaDepartamento1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Ciudad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tablaDepartamento1.setGridColor(new java.awt.Color(81, 198, 186));
+        tablaDepartamento1.setSelectionBackground(new java.awt.Color(81, 198, 186));
+        tablaDepartamento1.setSelectionForeground(new java.awt.Color(255, 51, 51));
+        tablaDepartamento1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaDepartamento1MouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(tablaDepartamento1);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTitulo2)
+                    .addComponent(lblDescripcion6)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lblDescripcion5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblDescripcion4)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lblTitulo2)
+                .addGap(18, 18, 18)
+                .addComponent(lblDescripcion4)
+                .addGap(15, 15, 15)
+                .addComponent(lblDescripcion5)
+                .addGap(15, 15, 15)
+                .addComponent(lblDescripcion6)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+
+        btnAtraspopularidad.setBackground(new java.awt.Color(81, 198, 186));
+        btnAtraspopularidad.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnAtraspopularidad.setForeground(new java.awt.Color(255, 255, 255));
+        btnAtraspopularidad.setText("<");
+
+        tablaprovincia.setBackground(new java.awt.Color(57, 72, 98));
+        tablaprovincia.setForeground(new java.awt.Color(255, 255, 255));
+        tablaprovincia.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Provincia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tablaprovincia.setGridColor(new java.awt.Color(57, 72, 98));
+        tablaprovincia.setSelectionBackground(new java.awt.Color(57, 72, 98));
+        tablaprovincia.setSelectionForeground(new java.awt.Color(255, 51, 51));
+        tablaprovincia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaprovinciaMouseClicked(evt);
+            }
+        });
+        tablaprovincia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tablaprovinciaKeyPressed(evt);
+            }
+        });
+        jScrollPane5.setViewportView(tablaprovincia);
+
+        popularidad.setBackground(new java.awt.Color(57, 72, 98));
+        popularidad.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        popularidad.setForeground(new java.awt.Color(255, 255, 255));
+
+        btnInsertarpopularidad.setBackground(new java.awt.Color(81, 198, 186));
+        btnInsertarpopularidad.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        btnInsertarpopularidad.setForeground(new java.awt.Color(255, 255, 255));
+        btnInsertarpopularidad.setText("Introducir popularidad");
+
+        jLabel1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Introducir numero de popularidad:");
+
+        javax.swing.GroupLayout panelpopularidadvistaLayout = new javax.swing.GroupLayout(panelpopularidadvista);
+        panelpopularidadvista.setLayout(panelpopularidadvistaLayout);
+        panelpopularidadvistaLayout.setHorizontalGroup(
+            panelpopularidadvistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelpopularidadvistaLayout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelpopularidadvistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelpopularidadvistaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelpopularidadvistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelpopularidadvistaLayout.createSequentialGroup()
+                                .addComponent(btnAtraspopularidad)
+                                .addContainerGap(278, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelpopularidadvistaLayout.createSequentialGroup()
+                                .addGroup(panelpopularidadvistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(panelpopularidadvistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnInsertarpopularidad)
+                                        .addComponent(jLabel1)))
+                                .addGap(23, 23, 23))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelpopularidadvistaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(popularidad, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(105, 105, 105))))
+        );
+        panelpopularidadvistaLayout.setVerticalGroup(
+            panelpopularidadvistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelpopularidadvistaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnAtraspopularidad)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(popularidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnInsertarpopularidad)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout panelpopularidadLayout = new javax.swing.GroupLayout(panelpopularidad);
+        panelpopularidad.setLayout(panelpopularidadLayout);
+        panelpopularidadLayout.setHorizontalGroup(
+            panelpopularidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelpopularidadvista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelpopularidadLayout.setVerticalGroup(
+            panelpopularidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelpopularidadvista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1160,6 +1488,11 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(panelgraficas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(panelpopularidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1183,6 +1516,11 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(panelgraficas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(panelpopularidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -1241,50 +1579,81 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
 
     private void btnvergraficasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvergraficasActionPerformed
         // TODO add your handling code here:
-        /*if(partido==""){
-            JOptionPane.showMessageDialog(null, "Seleccione el partido del cual desea ver las graficas");
-        }else{
-            if(Departamento==""){
-                JOptionPane.showMessageDialog(null, "Seleccione el departamento del cual desea ver las graficas");
-            }else{
-                ArrayList<datos> grafica = new ArrayList<>();
-                grafica=Obtenervalores(partido,Departamento);
-                if(grafica.isEmpty()){
-                    JOptionPane.showMessageDialog(null, "En este momento aun no existen datos de popularidad del partido del partido");
-                }else{
-                    DefaultPieDataset datosgrafica=new DefaultPieDataset();
-                    for(datos a:grafica){
-                        datosgrafica.setValue(a.getProvincia(),a.getPopularidad());
-                    }
-                    JFreeChart grafico_circular=ChartFactory.createPieChart("Popularidad por Provincia", datosgrafica,false,true,false);
-                    ChartPanel panel=new ChartPanel(grafico_circular);
-                    panel.setMouseWheelEnabled(true);
-                    panel.setPreferredSize(new Dimension(380,450));
-                    jPanel4.setLayout(new BorderLayout());
-                    jPanel4.add(panel,BorderLayout.NORTH);
-                    pack();
-                    repaint();
-                }
-            }
-        }*/
-
     }//GEN-LAST:event_btnvergraficasActionPerformed
+
+    private void btnatrasgraficasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnatrasgraficasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnatrasgraficasActionPerformed
+
+    private void btnpopularidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpopularidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnpopularidadActionPerformed
+
+    private void tablaPartido1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaPartido1MouseClicked
+        // TODO add your handling code here:
+        int index=tablaPartido1.getSelectedRow();
+        TableModel modelo=tablaPartido1.getModel();
+        partido=modelo.getValueAt(index, 0).toString();
+    }//GEN-LAST:event_tablaPartido1MouseClicked
+
+    private void tablaDepartamento1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaDepartamento1MouseClicked
+        // TODO add your handling code here:
+        int index=tablaDepartamento1.getSelectedRow();
+        TableModel modelo=tablaDepartamento1.getModel();
+        Departamento=modelo.getValueAt(index, 0).toString();
+        //llenadoprovincia();
+        DefaultTableModel dtmpr=new DefaultTableModel();
+        String[] titulopr=new String[]{"Provincias"};
+        dtmpr.setColumnIdentifiers(titulopr);
+        tablaprovincia.setModel(dtmpr);
+        ArrayList<String> provincias = new ArrayList<>();
+        provincias=MostrarProvincia(Departamento);
+        for(String dato:provincias){
+            dtmpr.addRow(new Object[]{
+                dato.toString()
+            });
+        }
+    }//GEN-LAST:event_tablaDepartamento1MouseClicked
+
+    private void tablaprovinciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaprovinciaMouseClicked
+        // TODO add your handling code here:
+        int index=tablaprovincia.getSelectedRow();
+        TableModel modelo=tablaprovincia.getModel();
+        provincia=modelo.getValueAt(index, 0).toString();
+    }//GEN-LAST:event_tablaprovinciaMouseClicked
+
+    private void tablaprovinciaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tablaprovinciaKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tablaprovinciaKeyPressed
+
+    private void btnGraficasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGraficasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAtrasEdit;
     public javax.swing.JButton btnAtrasRegistro;
     public javax.swing.JButton btnAtrasTabla;
+    public javax.swing.JButton btnAtraspopularidad;
     public javax.swing.JButton btnEdicionDeDatos;
     public javax.swing.JButton btnGraficas;
     public javax.swing.JButton btnGuardarEdit;
     public javax.swing.JButton btnGuardarRegistro;
+    public javax.swing.JButton btnInsertarpopularidad;
     public javax.swing.JButton btnRegistroDeDatos;
     public javax.swing.JButton btnValidarTabla;
+    public javax.swing.JButton btnatrasgraficas;
+    public javax.swing.JButton btnpopularidad;
     public javax.swing.JButton btnvergraficas;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JSeparator jSeparator2;
     public javax.swing.JSeparator jSeparator3;
@@ -1296,6 +1665,9 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
     private javax.swing.JLabel lblDescripcion1;
     private javax.swing.JLabel lblDescripcion2;
     private javax.swing.JLabel lblDescripcion3;
+    private javax.swing.JLabel lblDescripcion4;
+    private javax.swing.JLabel lblDescripcion5;
+    private javax.swing.JLabel lblDescripcion6;
     public javax.swing.JLabel lblFechaFundacion;
     private javax.swing.JLabel lblIconRegistro;
     public javax.swing.JLabel lblIconTabla;
@@ -1320,6 +1692,7 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
     public javax.swing.JLabel lblTextoT2;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblTitulo1;
+    private javax.swing.JLabel lblTitulo2;
     public javax.swing.JLabel lblTituloEdicion;
     public javax.swing.JLabel lblTituloTabla;
     public javax.swing.JPanel panelDerecho;
@@ -1341,13 +1714,19 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
     public javax.swing.JLabel panelTextoEdicion3;
     public javax.swing.JPanel panelgraficas;
     private javax.swing.JPanel panelgraficasvista;
+    public javax.swing.JPanel panelpopularidad;
+    private javax.swing.JPanel panelpopularidadvista;
     public javax.swing.JPanel panelvistagrafica;
     private javax.swing.JPanel pilar1;
     private javax.swing.JPanel pilar2;
+    public javax.swing.JTextField popularidad;
     public javax.swing.JScrollPane scrollTabla;
     public javax.swing.JTable tablaDepartamento;
+    public javax.swing.JTable tablaDepartamento1;
     public javax.swing.JTable tablaIdentificador;
     public javax.swing.JTable tablaPartido;
+    public javax.swing.JTable tablaPartido1;
+    public javax.swing.JTable tablaprovincia;
     public javax.swing.JTextField txtDepartamento;
     public javax.swing.JTextField txtDepartamentoEdit;
     public javax.swing.JTextField txtFechaFundacion;
@@ -1364,4 +1743,5 @@ public class RegistroEdicionPartidos extends javax.swing.JFrame {
     public javax.swing.JTextField txtSigla;
     public javax.swing.JTextField txtSiglaEdit;
     // End of variables declaration//GEN-END:variables
+
 }

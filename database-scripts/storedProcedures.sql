@@ -107,7 +107,8 @@ BEGIN
         d.Nombre_departamento = @nombreDepartamento AND
        	p.Fecha_popularidad >= DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1)
 AND
-p.Fecha_popularidad < DATEADD(MONTH, 1, DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1))
+p.Fecha_popularidad < DATEADD(MONTH, 1, DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1));
+END;
 
 -- Procedimiento almacenado 7: ObtenerNombresPartidos
 -- Este procedimiento nos devuelve todos los partidos de la base de datos.

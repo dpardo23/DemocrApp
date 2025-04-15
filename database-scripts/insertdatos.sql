@@ -10,7 +10,7 @@ INSERT INTO Departamento (Id_departamento, Nombre_departamento) VALUES
 (8, 'Beni'),
 (9, 'Pando');
 
--- Inserta 3 partidos políticos de ejemplo en la tabla Partido_Politico, cada uno asociado a un departamento
+-- Inserta 31 partidos políticos de ejemplo en la tabla Partido_Politico, cada uno asociado a un departamento
 INSERT INTO Partido_Politico (
     Id_Partido,
     Departamento_Id_departamento,
@@ -22,8 +22,36 @@ INSERT INTO Partido_Politico (
     Fecha_fundacion
 ) VALUES
 (1, 2, 'Movimiento Progreso Nacional', 'MPN', 'Luis Andrade', 'Centro Izquierda', 12000, '2001-05-15'),
-(2, 7, 'Alianza Democrática Popular', 'ADP', 'Sofía Guzmán', 'Centro Derecha', 18500, '1998-09-10'),
-(3, 3, 'Unidad por el Cambio', 'UC', 'Carlos Mamani', 'Socialismo Democrático', 9500, '2005-03-20');
+(12345678, 1, 'Movimiento Aurora', 'MA', 'Sofía Villalobos', 'Progresista', 3200, '1998-03-15'),
+(23456789, 2, 'Fuerza Andina', 'FA', 'Carlos Quispe', 'Indigenista', 4500, '2001-07-20'),
+(34567890, 3, 'Renovación Ciudadana', 'RC', 'María López', 'Liberal', 5200, '2005-11-10'),
+(45678901, 4, 'Unidad Popular', 'UP', 'Jorge Arce', 'Socialista', 6100, '1995-05-25'),
+(56789012, 5, 'Alianza Verde', 'AV', 'Elena Rojas', 'Ecologista', 2800, '2010-09-12'),
+(67890123, 6, 'Vanguardia Nacional', 'VN', 'Luis Fernández', 'Conservador', 3700, '2003-02-18'),
+(78901234, 7, 'Horizonte Democrático', 'HD', 'Ana Morales', 'Democrático', 4900, '2008-06-30'),
+(89012345, 8, 'Pueblo Unido', 'PU', 'Miguel Vargas', 'Socialdemócrata', 5300, '2012-01-14'),
+(90123456, 9, 'Futuro Solidario', 'FS', 'Claudia Pérez', 'Humanista', 4100, '2015-08-22'),
+(12345679, 1, 'Nueva Esperanza', 'NE', 'Ricardo Gutiérrez', 'Progresista', 4600, '1999-04-05'),
+(23456780, 2, 'Acción Boliviana', 'AB', 'Gabriela Suárez', 'Liberal', 3400, '2007-10-19'),
+(34567891, 3, 'Cambio Radical', 'CR', 'Fernando Aguilar', 'Socialista', 5800, '2004-12-03'),
+(45678902, 4, 'Fuerza del Pueblo', 'FP', 'Isabel Mendoza', 'Indigenista', 6200, '2011-03-27'),
+(56789013, 5, 'Avance Democrático', 'AD', 'Hugo Salazar', 'Democrático', 3900, '2000-07-09'),
+(67890124, 6, 'Movimiento Solidario', 'MS', 'Patricia Ortega', 'Humanista', 4700, '2013-05-16'),
+(78901235, 7, 'Progreso Nacional', 'PN', 'Diego Castro', 'Conservador', 5200, '2006-09-01'),
+(89012346, 8, 'Alianza por la Justicia', 'AJ', 'Lucía Herrera', 'Socialdemócrata', 4300, '2016-11-11'),
+(90123457, 9, 'Futuro Verde', 'FV', 'Andrés Paredes', 'Ecologista', 3100, '2018-02-08'),
+(12345680, 1, 'Unidad Nacional', 'UN', 'Verónica Chávez', 'Progresista', 5600, '2002-06-14'),
+(23456791, 2, 'Horizonte Popular', 'HP', 'Javier Peña', 'Socialista', 6000, '2014-09-23'),
+(34567802, 3, 'Renacer Democrático', 'RD', 'Carmen Silva', 'Democrático', 3800, '2009-12-07'),
+(45678913, 4, 'Fuerza Nueva', 'FN', 'Esteban Ríos', 'Conservador', 4500, '2017-04-02'),
+(56789024, 5, 'Movimiento por la Igualdad', 'MI', 'Natalia Vargas', 'Humanista', 4900, '2020-01-19'),
+(67890135, 6, 'Progreso Andino', 'PA', 'Tomás Guzmán', 'Indigenista', 5300, '2021-08-13'),
+(78901246, 7, 'Acción Solidaria', 'AS', 'Rosa Delgado', 'Socialdemócrata', 4100, '2022-03-05'),
+(89012357, 8, 'Vanguardia Popular', 'VP', 'Álvaro Espinoza', 'Progresista', 4700, '2023-10-29'),
+(90123468, 9, 'Futuro Democrático', 'FD', 'Daniela Romero', 'Democrático', 3600, '2024-07-18'),
+(12345681, 1, 'Renovación Nacional', 'RN', 'Felipe Torres', 'Conservador', 5200, '2025-12-25'),
+(23456792, 2, 'Horizonte Solidario', 'HS', 'Mónica Estrada', 'Humanista', 4400, '2026-11-03'),
+(34567803, 3, 'Unidad Andina', 'UA', 'Gustavo León', 'Indigenista', 5700, '2027-06-21');
 
 -- Inserta datos de popularidad para el partido 1 en todas las provincias del departamento de Chuquisaca (ID = 1)
 INSERT INTO Popularidad (

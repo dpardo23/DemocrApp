@@ -343,7 +343,7 @@ public class RegistroEdicionController {
         });
     }
 
-    // Método para iniciar la interfaz gráfica
+    // Método para iniciar la interfaz gráfica "Principal"
     public void iniciar() {
         vista.setVisible(true);
         vista.panelTablaEdicion.setVisible(false);

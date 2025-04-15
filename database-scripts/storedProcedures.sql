@@ -84,3 +84,119 @@ BEGIN
     WHERE Id_Partido = @idComparar;
 END;
 GO
+    
+-- Procedimiento almacenado 6: ObtenerValores
+-- Este procedimiento nos devuelve los valores de popularidad de la base de datos para poder generar la grafica.
+CREATE PROCEDURE ObtenerValores
+    @nombrePartido VARCHAR(255),
+    @nombreDepartamento VARCHAR(255)
+AS
+BEGIN
+    SELECT 
+        p.Popularidad,
+        p.Provincia,
+        p.Fecha_popularidad
+    FROM 
+        Popularidad p
+    INNER JOIN Partido_Politico pp 
+        ON p.Partido_Politico_Id_Partido = pp.Id_Partido
+    INNER JOIN Departamento d 
+        ON p.Departamento_Id_departamento = d.Id_departamento
+    WHERE 
+        pp.Nombre_partido = @nombrePartido AND
+        d.Nombre_departamento = @nombreDepartamento AND
+       	p.Fecha_popularidad >= DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1)
+AND
+p.Fecha_popularidad < DATEADD(MONTH, 1, DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1))
+
+-- Procedimiento almacenado 7: ObtenerNombresPartidos
+-- Este procedimiento nos devuelve todos los partidos de la base de datos.
+CREATE PROCEDURE ObtenerNombresPartidos
+AS
+BEGIN
+    SELECT Nombre_partido FROM Partido_Politico;
+END;
+
+-- Procedimiento almacenado 8: ObtenerDepartamentos
+-- Este procedimiento nos devuelve todos los departamentos de la base de datos.
+CREATE PROCEDURE ObtenerDepartamentos
+AS
+BEGIN
+    SELECT * FROM Departamento;
+END;
+
+
+-- Procedimiento almacenado 9: InsertarPopularidad
+-- Este procedimiento inserta a la base de datos los valores de popularidad solo si estos no existen previamente.
+CREATE PROCEDURE InsertarPopularidad
+    @nombrePartido VARCHAR(255),
+    @nombreDepartamento VARCHAR(255),
+    @nombreProvincia VARCHAR(255),
+    @popularidad INT,
+    @registroCreado BIT OUTPUT
+AS
+BEGIN
+    DECLARE @idPartido INT;
+    DECLARE @idDepartamento INT;
+    DECLARE @fechaActual DATE = GETDATE();
+
+    -- Inicializar el valor de salida
+    SET @registroCreado = 0;
+
+    -- Obtener el ID del partido
+    SELECT @idPartido = Id_Partido
+    FROM Partido_Politico
+    WHERE Nombre_partido = @nombrePartido;
+
+    IF @idPartido IS NULL
+    BEGIN
+        THROW 50001, '❌ Partido político no encontrado.', 1;
+    END
+
+    -- Obtener el ID del departamento
+    SELECT @idDepartamento = Id_departamento
+    FROM Departamento
+    WHERE Nombre_departamento = @nombreDepartamento;
+
+    IF @idDepartamento IS NULL
+    BEGIN
+        THROW 50002, '❌ Departamento no encontrado.', 1;
+    END
+
+    -- Verificar si ya existe un registro similar este mes
+    IF EXISTS (
+        SELECT 1
+        FROM Popularidad
+        WHERE Partido_Politico_Id_Partido = @idPartido
+          AND Departamento_Id_departamento = @idDepartamento
+          AND Provincia = @nombreProvincia
+          AND MONTH(Fecha_popularidad) = MONTH(@fechaActual)
+          AND YEAR(Fecha_popularidad) = YEAR(@fechaActual)
+    )
+    BEGIN
+        -- Registro ya existente, no se inserta
+        SET @registroCreado = 0;
+        RETURN;
+    END
+
+    -- Insertar el nuevo registro
+    INSERT INTO Popularidad (
+        Id_popularidad,
+        Partido_Politico_Id_Partido,
+        Departamento_Id_departamento,
+        Popularidad,
+        Provincia,
+        Fecha_popularidad
+    )
+    VALUES (
+        (SELECT ISNULL(MAX(Id_popularidad), 0) + 1 FROM Popularidad),
+        @idPartido,
+        @idDepartamento,
+        @popularidad,
+        @nombreProvincia,
+        @fechaActual
+    );
+
+    -- Confirmar éxito
+    SET @registroCreado = 1;
+END;

@@ -127,7 +127,7 @@ CREATE TABLE Popularidad (
   Partido_Politico_Id_Partido INTEGER NOT NULL,
   Departamento_Id_departamento INTEGER NOT NULL,
   Popularidad INTEGER,
-  Provincia VARCHAR,
+  Provincia VARCHAR(255),
   Fecha_popularidad DATE,
   PRIMARY KEY(Id_popularidad, Partido_Politico_Id_Partido),
   FOREIGN KEY(Departamento_Id_departamento) REFERENCES Departamento(Id_departamento),

@@ -201,3 +201,16 @@ BEGIN
     -- Confirmar éxito
     SET @registroCreado = 1;
 END;
+
+-- Procedimiento almacenado 10: InsertarPopularidad
+-- Este procedimiento muestra las provincias del departamento seleccionado.
+CREATE PROCEDURE ObtenerProvincias
+    @nombreDepartamento VARCHAR(255)
+AS
+BEGIN
+    SELECT DISTINCT p.Provincia
+    FROM Popularidad p
+    INNER JOIN Departamento d 
+        ON p.Departamento_Id_departamento = d.Id_departamento
+    WHERE d.Nombre_departamento = @nombreDepartamento;
+END;

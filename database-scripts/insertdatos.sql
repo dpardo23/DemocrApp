@@ -70,17 +70,7 @@ INSERT INTO Popularidad (
 (6, 1, 1, 66, 'Belisario Boeto', '2025-04-01'),
 (7, 1, 1, 69, 'Nor Cinti', '2025-04-01'),
 (8, 1, 1, 73, 'Sud Cinti', '2025-04-01'),
-(9, 1, 1, 71, 'Luis Calvo', '2025-04-01');
-
--- Inserta datos de popularidad para el partido 1 en todas las provincias del departamento de La Paz (ID = 2)
-INSERT INTO Popularidad (
-  Id_popularidad,
-  Partido_Politico_Id_Partido,
-  Departamento_Id_departamento,
-  Popularidad,
-  Provincia,
-  Fecha_popularidad
-) VALUES
+(9, 1, 1, 71, 'Luis Calvo', '2025-04-01'),
 (10, 1, 2, 78, 'Abel Iturralde', '2025-04-01'),
 (11, 1, 2, 70, 'Aroma', '2025-04-01'),
 (12, 1, 2, 73, 'Bautista Saavedra', '2025-04-01'),
@@ -99,17 +89,7 @@ INSERT INTO Popularidad (
 (25, 1, 2, 71, 'Omasuyos', '2025-04-01'),
 (26, 1, 2, 75, 'Pacajes', '2025-04-01'),
 (27, 1, 2, 80, 'Pedro Domingo Murillo', '2025-04-01'),
-(28, 1, 2, 73, 'Sud Yungas', '2025-04-01');
-
--- Inserta datos de popularidad para el partido 1 en todas las provincias de Cochabamba (ID = 3)
-INSERT INTO Popularidad (
-  Id_popularidad,
-  Partido_Politico_Id_Partido,
-  Departamento_Id_departamento,
-  Popularidad,
-  Provincia,
-  Fecha_popularidad
-) VALUES
+(28, 1, 2, 73, 'Sud Yungas', '2025-04-01'),
 (29, 1, 3, 72, 'Arani', '2025-04-01'),
 (30, 1, 3, 68, 'Arque', '2025-04-01'),
 (31, 1, 3, 75, 'Ayopaya', '2025-04-01'),
@@ -123,17 +103,7 @@ INSERT INTO Popularidad (
 (39, 1, 3, 76, 'Punata', '2025-04-01'),
 (40, 1, 3, 70, 'Quillacollo', '2025-04-01'),
 (41, 1, 3, 66, 'Tapacarí', '2025-04-01'),
-(42, 1, 3, 75, 'Tiraque', '2025-04-01');
-
--- Inserta datos de popularidad para el partido 1 en todas las provincias de Oruro (ID = 4)
-INSERT INTO Popularidad (
-  Id_popularidad,
-  Partido_Politico_Id_Partido,
-  Departamento_Id_departamento,
-  Popularidad,
-  Provincia,
-  Fecha_popularidad
-) VALUES
+(42, 1, 3, 75, 'Tiraque', '2025-04-01'),
 (43, 1, 4, 74, 'Cercado', '2025-04-01'),
 (44, 1, 4, 69, 'Eduardo Abaroa', '2025-04-01'),
 (45, 1, 4, 72, 'Ladislao Cabrera', '2025-04-01'),
@@ -148,17 +118,7 @@ INSERT INTO Popularidad (
 (54, 1, 4, 66, 'Saucarí', '2025-04-01'),
 (55, 1, 4, 74, 'Sebastián Pagador', '2025-04-01'),
 (56, 1, 4, 69, 'Sud Carangas', '2025-04-01'),
-(57, 1, 4, 75, 'Tomás Barrón', '2025-04-01');
-
--- Inserta datos de popularidad para el partido 1 en todas las provincias de Potosí (ID = 5)
-INSERT INTO Popularidad (
-  Id_popularidad,
-  Partido_Politico_Id_Partido,
-  Departamento_Id_departamento,
-  Popularidad,
-  Provincia,
-  Fecha_popularidad
-) VALUES
+(57, 1, 4, 75, 'Tomás Barrón', '2025-04-01'),
 (58, 1, 5, 74, 'Alonso de Ibáñez', '2025-04-01'),
 (59, 1, 5, 70, 'Antonio Quijarro', '2025-04-01'),
 (60, 1, 5, 73, 'Bernardino Bilbao', '2025-04-01'),
@@ -174,33 +134,13 @@ INSERT INTO Popularidad (
 (70, 1, 5, 69, 'Rafael Bustillo', '2025-04-01'),
 (71, 1, 5, 73, 'Sud Chichas', '2025-04-01'),
 (72, 1, 5, 66, 'Sud Lípez', '2025-04-01'),
-(73, 1, 5, 77, 'Tomás Frías', '2025-04-01');
-
--- Inserta datos de popularidad para el partido 1 en todas las provincias de Tarija (ID = 6)
-INSERT INTO Popularidad (
-  Id_popularidad,
-  Partido_Politico_Id_Partido,
-  Departamento_Id_departamento,
-  Popularidad,
-  Provincia,
-  Fecha_popularidad
-) VALUES
+(73, 1, 5, 77, 'Tomás Frías', '2025-04-01'),
 (74, 1, 6, 72, 'Aniceto Arce', '2025-04-01'),
 (75, 1, 6, 69, 'Burdett O''Connor', '2025-04-01'),
 (76, 1, 6, 75, 'Cercado', '2025-04-01'),
 (77, 1, 6, 70, 'Eustaquio Méndez', '2025-04-01'),
 (78, 1, 6, 74, 'Gran Chaco', '2025-04-01'),
-(79, 1, 6, 68, 'José María Avilés', '2025-04-01');
-
--- Popularidad del partido 1 en todas las provincias de Santa Cruz (ID = 7)
-INSERT INTO Popularidad (
-  Id_popularidad,
-  Partido_Politico_Id_Partido,
-  Departamento_Id_departamento,
-  Popularidad,
-  Provincia,
-  Fecha_popularidad
-) VALUES
+(79, 1, 6, 68, 'José María Avilés', '2025-04-01'),
 (80, 1, 7, 75, 'Andrés Ibáñez', '2025-04-01'),
 (81, 1, 7, 69, 'Ángel Sandoval', '2025-04-01'),
 (82, 1, 7, 70, 'Chiquitos', '2025-04-01'),
@@ -215,17 +155,7 @@ INSERT INTO Popularidad (
 (91, 1, 7, 67, 'Sara', '2025-04-01'),
 (92, 1, 7, 69, 'Vallegrande', '2025-04-01'),
 (93, 1, 7, 73, 'Velasco', '2025-04-01'),
-(94, 1, 7, 78, 'Warnes', '2025-04-01');
-
--- Popularidad del partido 1 en todas las provincias de Beni (ID = 8)
-INSERT INTO Popularidad (
-  Id_popularidad,
-  Partido_Politico_Id_Partido,
-  Departamento_Id_departamento,
-  Popularidad,
-  Provincia,
-  Fecha_popularidad
-) VALUES
+(94, 1, 7, 78, 'Warnes', '2025-04-01').
 (95, 1, 8, 72, 'Cercado', '2025-04-01'),
 (96, 1, 8, 70, 'Iténez', '2025-04-01'),
 (97, 1, 8, 74, 'José Ballivián', '2025-04-01'),
@@ -233,19 +163,79 @@ INSERT INTO Popularidad (
 (99, 1, 8, 73, 'Marbán', '2025-04-01'),
 (100, 1, 8, 71, 'Moxos', '2025-04-01'),
 (101, 1, 8, 69, 'Vaca Díez', '2025-04-01'),
-(102, 1, 8, 75, 'Yacuma', '2025-04-01');
-
--- Popularidad del partido 1 en todas las provincias de Pando (ID = 9)
-INSERT INTO Popularidad (
-  Id_popularidad,
-  Partido_Politico_Id_Partido,
-  Departamento_Id_departamento,
-  Popularidad,
-  Provincia,
-  Fecha_popularidad
-) VALUES
+(102, 1, 8, 75, 'Yacuma', '2025-04-01'),
 (103, 1, 9, 70, 'Abuná', '2025-04-01'),
 (104, 1, 9, 72, 'Federico Román', '2025-04-01'),
 (105, 1, 9, 68, 'Madre de Dios', '2025-04-01'),
 (106, 1, 9, 75, 'Manuripi', '2025-04-01'),
 (107, 1, 9, 74, 'Nicolás Suárez', '2025-04-01');
+(108, 12345678, 1, 72, 'Oropeza', '2025-04-01'),
+(109, 12345678, 1, 68, 'Yamparáez', '2025-04-02'),
+(110, 12345678, 1, 70, 'Jaime Zudáñez', '2025-04-03'),
+(111, 12345678, 1, 65, 'Tomina', '2025-04-04'),
+(112, 12345678, 1, 74, 'Hernando Siles', '2025-04-05'),
+(113, 12345678, 1, 66, 'Belisario Boeto', '2025-04-06'),
+(114, 23456789, 2, 78, 'Abel Iturralde', '2025-04-01'),
+(115, 23456789, 2, 70, 'Aroma', '2025-04-02'),
+(116, 23456789, 2, 73, 'Bautista Saavedra', '2025-04-03'),
+(117, 23456789, 2, 75, 'Caranavi', '2025-04-04'),
+(118, 23456789, 2, 69, 'Franz Tamayo', '2025-04-05'),
+(119, 23456789, 2, 67, 'Gualberto Villarroel', '2025-04-06'),
+(120, 34567890, 3, 72, 'Arani', '2025-04-01'),
+(121, 34567890, 3, 68, 'Arque', '2025-04-02'),
+(122, 34567890, 3, 75, 'Ayopaya', '2025-04-03'),
+(123, 34567890, 3, 70, 'Capinota', '2025-04-04'),
+(124, 34567890, 3, 67, 'Carrasco', '2025-04-05'),
+(125, 34567890, 3, 80, 'Cercado', '2025-04-06'),
+(126, 45678901, 4, 74, 'Cercado', '2025-04-01'),
+(127, 45678901, 4, 69, 'Eduardo Abaroa', '2025-04-02'),
+(128, 45678901, 4, 72, 'Ladislao Cabrera', '2025-04-03'),
+(129, 45678901, 4, 70, 'Litoral', '2025-04-04'),
+(130, 45678901, 4, 67, 'Mejillones', '2025-04-05'),
+(131, 45678901, 4, 76, 'Nor Carangas', '2025-04-06'),
+(132, 56789012, 5, 74, 'Alonso de Ibáñez', '2025-04-01'),
+(133, 56789012, 5, 70, 'Antonio Quijarro', '2025-04-02'),
+(134, 56789012, 5, 73, 'Bernardino Bilbao', '2025-04-03'),
+(135, 56789012, 5, 69, 'Charcas', '2025-04-04'),
+(136, 56789012, 5, 75, 'Chayanta', '2025-04-05'),
+(137, 56789012, 5, 68, 'Cornelio Saavedra', '2025-04-06'),
+(138, 67890123, 6, 72, 'Aniceto Arce', '2025-04-01'),
+(139, 67890123, 6, 69, 'Burdett Connor', '2025-04-02'),
+(140, 67890123, 6, 75, 'Cercado', '2025-04-03'),
+(141, 67890123, 6, 70, 'Eustaquio Méndez', '2025-04-04'),
+(142, 67890123, 6, 74, 'Gran Chaco', '2025-04-05'),
+(143, 67890123, 6, 68, 'José María Avilés', '2025-04-06'),
+(144, 78901234, 7, 75, 'Andrés Ibáñez', '2025-04-01'),
+(145, 78901234, 7, 69, 'Ángel Sandoval', '2025-04-02'),
+(146, 78901234, 7, 70, 'Chiquitos', '2025-04-03'),
+(147, 78901234, 7, 73, 'Cordillera', '2025-04-04'),
+(148, 78901234, 7, 68, 'Florida', '2025-04-05'),
+(149, 78901234, 7, 74, 'Germán Busch', '2025-04-06'),
+(150, 89012345, 8, 72, 'Cercado', '2025-04-01'),
+(151, 89012345, 8, 70, 'Iténez', '2025-04-02'),
+(152, 89012345, 8, 74, 'José Ballivián', '2025-04-03'),
+(153, 89012345, 8, 68, 'Mamoré', '2025-04-04'),
+(154, 89012345, 8, 73, 'Marbán', '2025-04-05'),
+(155, 89012345, 8, 71, 'Moxos', '2025-04-06'),
+(156, 90123456, 9, 70, 'Abuná', '2025-04-01'),
+(157, 90123456, 9, 72, 'Federico Román', '2025-04-02'),
+(158, 90123456, 9, 68, 'Madre de Dios', '2025-04-03'),
+(159, 90123456, 9, 75, 'Manuripi', '2025-04-04'),
+(160, 90123456, 9, 74, 'Nicolás Suárez', '2025-04-05'),
+(161, 12345678, 1, 71, 'Luis Calvo', '2025-04-07'),
+(162, 23456789, 2, 77, 'Manco Kapac', '2025-04-07'),
+(163, 34567890, 3, 76, 'Punata', '2025-04-07'),
+(164, 45678901, 4, 75, 'Tomás Barrón', '2025-04-07'),
+(165, 56789012, 5, 77, 'Tomás Frías', '2025-04-07'),
+(166, 67890123, 6, 75, 'Cercado', '2025-04-07'),
+(167, 78901234, 7, 78, 'Warnes', '2025-04-07'),
+(168, 89012345, 8, 75, 'Yacuma', '2025-04-07'),
+(169, 90123456, 9, 72, 'Federico Román', '2025-04-07'),
+(170, 12345678, 1, 73, 'Sud Cinti', '2025-04-08'),
+(171, 23456789, 2, 80, 'Pedro Domingo Murillo', '2025-04-08'),
+(172, 34567890, 3, 75, 'Tiraque', '2025-04-08'),
+(173, 45678901, 4, 74, 'Sebastián Pagador', '2025-04-08'),
+(174, 56789012, 5, 74, 'Nor Chichas', '2025-04-08'),
+(175, 67890123, 6, 74, 'Gran Chaco', '2025-04-08'),
+(176, 78901234, 7, 74, 'Germán Busch', '2025-04-08'),
+(177, 89012345, 8, 74, 'José Ballivián', '2025-04-08');

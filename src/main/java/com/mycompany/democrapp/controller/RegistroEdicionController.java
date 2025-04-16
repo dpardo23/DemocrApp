@@ -258,33 +258,6 @@ public class RegistroEdicionController {
         
         
         this.vista.btnvergraficas.addActionListener((ActionEvent e) -> {
-            // Ocultar los demas paneles
-            /*if(vista.partido==""){
-            JOptionPane.showMessageDialog(null, "Seleccione el partido del cual desea ver las graficas");
-            }else{
-            if(vista.Departamento==""){
-                JOptionPane.showMessageDialog(null, "Seleccione el departamento del cual desea ver las graficas");
-            }else{
-                ArrayList<datos> grafica = new ArrayList<>();
-                grafica=Obtenervalores(vista.partido,vista.Departamento);
-                if(grafica.isEmpty()){
-                    JOptionPane.showMessageDialog(null, "En este momento aun no existen datos de popularidad del partido del partido");
-                }else{
-                    DefaultPieDataset datosgrafica=new DefaultPieDataset();
-                    for(datos a:grafica){
-                        datosgrafica.setValue(a.getProvincia(),a.getPopularidad());
-                    }
-                    JFreeChart grafico_circular=ChartFactory.createPieChart("Popularidad por Provincia", datosgrafica,false,true,false);
-                    ChartPanel panel=new ChartPanel(grafico_circular);
-                    panel.setMouseWheelEnabled(true);
-                    panel.setPreferredSize(new Dimension(280,384));
-                    vista.panelvistagrafica.setLayout(new BorderLayout());
-                    vista.panelvistagrafica.add(panel,BorderLayout.NORTH);
-                    vista.pack();
-                    vista.repaint();
-                }
-            }
-        }*/
             if(vista.partido.equals("")){
                 JOptionPane.showMessageDialog(null, "Seleccione el partido del cual desea ver las graficas");
             } else {

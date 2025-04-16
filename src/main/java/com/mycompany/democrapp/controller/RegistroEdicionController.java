@@ -193,6 +193,9 @@ public class RegistroEdicionController {
             // Mostrar el panel principal
             vista.panelPrincipal.setVisible(false);
             
+            dtmp=new DefaultTableModel();
+            dtmd=new DefaultTableModel();
+            dtmpr=new DefaultTableModel();
             llenadop();
 
             // Limpiar el campo de identificacion en la edicion de datos
@@ -256,9 +259,9 @@ public class RegistroEdicionController {
         
         this.vista.btnvergraficas.addActionListener((ActionEvent e) -> {
             // Ocultar los demas paneles
-            if(vista.partido==""){
+            /*if(vista.partido==""){
             JOptionPane.showMessageDialog(null, "Seleccione el partido del cual desea ver las graficas");
-        }else{
+            }else{
             if(vista.Departamento==""){
                 JOptionPane.showMessageDialog(null, "Seleccione el departamento del cual desea ver las graficas");
             }else{
@@ -281,7 +284,49 @@ public class RegistroEdicionController {
                     vista.repaint();
                 }
             }
+        }*/
+            if(vista.partido.equals("")){
+                JOptionPane.showMessageDialog(null, "Seleccione el partido del cual desea ver las graficas");
+            } else {
+                // Verificamos si se ha seleccionado un departamento
+                if(vista.Departamento.equals("")){
+                    JOptionPane.showMessageDialog(null, "Seleccione el departamento del cual desea ver las graficas");
+                } else {
+                    // Obtenemos los valores de la gráfica
+                    ArrayList<datos> grafica = Obtenervalores(vista.partido, vista.Departamento);
+            
+                    // Si no hay datos, mostramos un mensaje
+                    if(grafica.isEmpty()){
+                        JOptionPane.showMessageDialog(null, "En este momento aun no existen datos de popularidad del partido");
+                    } else {
+                        // Creamos el dataset para el gráfico circular
+                        DefaultPieDataset datosgrafica = new DefaultPieDataset();
+                        for(datos a : grafica){
+                            datosgrafica.setValue(a.getProvincia(), a.getPopularidad());
+                        }
+                
+                        // Creamos el gráfico
+                        JFreeChart grafico_circular = ChartFactory.createPieChart("Popularidad por Provincia", datosgrafica, false, true, false);
+                        ChartPanel panel = new ChartPanel(grafico_circular);
+                        panel.setMouseWheelEnabled(true);
+                        panel.setPreferredSize(new Dimension(280, 384));
+
+                        // Limpiar el panel antes de agregar un nuevo gráfico
+                        vista.panelvistagrafica.removeAll(); // Esto elimina cualquier componente previamente agregado
+
+                        // Agregar el nuevo gráfico al panel
+                        vista.panelvistagrafica.setLayout(new BorderLayout());
+                        vista.panelvistagrafica.add(panel, BorderLayout.NORTH);
+                
+                        // Actualizamos el panel
+                        vista.panelvistagrafica.revalidate();
+                        vista.panelvistagrafica.repaint();
+                
+                        // Ajustamos el tamaño de la ventana
+                        vista.pack();
+            }
         }
+    }
         });
         
         this.vista.btnGraficas.addActionListener((ActionEvent e) -> {
@@ -294,6 +339,9 @@ public class RegistroEdicionController {
             // Mostrar el panel de registro de datos
             vista.panelRegistroDeDatos.setVisible(false);
             vista.panelgraficas.setVisible(true);
+            vista.panelvistagrafica.removeAll();
+            dtmp=new DefaultTableModel();
+            dtmd=new DefaultTableModel();
             llenado();
         });
         
